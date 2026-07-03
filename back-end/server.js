@@ -1,73 +1,54 @@
+// back-end/server.js
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
 const cors = require('cors');
+const path = require('path');
+const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Security & Data Parsing Middleware
+// Enable Cross-Origin Resource Sharing (fixes 'Failed to fetch' errors)
 app.use(cors());
-app.use(express.json());
 
-// Serve your front-end automatically
-app.use(express.static(path.join(__dirname, '../front-end')));
+const ROOT_DIR = path.join(__dirname, '..');
 
-// ==========================================
-// 1. THE FACTORY VAULT API (X-RAY SCANNER)
-// ==========================================
-app.get('/api/vault/:category', (req, res) => {
-    const category = req.params.category;
-    const directoryPath = path.join(__dirname, '../front-end/products', category);
-
-    try {
-        if (!fs.existsSync(directoryPath)) {
-            return res.status(404).json({ error: "Category vault not found", files: [] });
+// 1. SECURE API ENDPOINT 
+app.get('/api/products/:category', (req, res) => {
+    // SECURITY FIX: path.basename strips out malicious directory traversal attempts (e.g., ../../../etc/passwd)
+    const folderName = path.basename(req.params.category);
+    const dirPath = path.join(ROOT_DIR, 'front-end', 'products', folderName);
+    
+    fs.readdir(dirPath, (err, files) => {
+        if (err) {
+            console.error(`[API Error] Folder not found: ${dirPath}`);
+            return res.status(404).json({ error: "Product category not found." });
         }
-
-        const allFiles = fs.readdirSync(directoryPath);
-        const validExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.JPG', '.PNG'];
-        const imagesOnly = allFiles.filter(file => validExtensions.includes(path.extname(file)));
-
-        res.json({ 
-            category: category, 
-            totalFound: imagesOnly.length, 
-            files: imagesOnly 
-        });
-
-    } catch (error) {
-        console.error("Vault Security Error:", error);
-        res.status(500).json({ error: "Internal factory server error" });
-    }
+        
+        // Filter for images only
+        const imageFiles = files.filter(f => /\.(jpe?g|png|gif|webp|avif)$/i.test(f));
+        res.status(200).json(imageFiles);
+    });
 });
 
-// ==========================================
-// 2. THE QUOTE REQUEST ENGINE (LEAD CAPTURE)
-// ==========================================
-app.post('/api/quote', (req, res) => {
-    const { email, message } = req.body;
-    
-    // 1. Print the alert directly in your terminal
-    console.log(`\n🚨 NEW FACTORY QUOTE REQUEST 🚨`);
-    console.log(`Client Email: ${email}`);
-    console.log(`Details: ${message}\n`);
+// 2. SERVE STATIC FRONTEND
+// Express handles all mime-types safely out of the box
+app.use(express.static(path.join(ROOT_DIR, 'front-end')));
 
-    // 2. Save the lead securely to a local file so you never lose it
-    const logEntry = `Date: ${new Date().toLocaleString()}\nEmail: ${email}\nMessage: ${message}\n-----------------------\n`;
-    const logPath = path.join(__dirname, 'client_leads_vault.txt');
-    
-    try {
-        fs.appendFileSync(logPath, logEntry);
-        // 3. Send the success message back to the client's screen
-        res.json({ message: "Quote request successfully securely transmitted to the factory floor. Our executive team will contact you shortly!" });
-    } catch (err) {
-        console.error("Failed to save lead:", err);
-        res.status(500).json({ message: "System error, please try emailing us directly." });
-    }
+// 3. SPA CATCH-ALL
+app.get('*', (req, res) => {
+    res.sendFile(path.join(ROOT_DIR, 'front-end', 'index.html'));
 });
 
-// Start the high-performance engine
-app.listen(PORT, () => {
-    console.log(`🚀 SABRI TRADER BACKEND LIVE ON PORT ${PORT}`);
-    console.log(`📡 Database & Quote Engine connection established. Awaiting front-end requests...`);
-});
+// 4. SERVERLESS EXPORT & LOCAL BOOT
+// Vercel requires the app to be exported, not listened to. We only listen if running locally.
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`========================================`);
+        console.log(`🚀 Express Engine Online!`);
+        console.log(`👉 Running on http://localhost:${PORT}`);
+        console.log(`========================================`);
+    });
+}
+
+// Required for Vercel Serverless Functions
+module.exports = app;

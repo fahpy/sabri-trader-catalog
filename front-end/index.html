@@ -1,627 +1,1380 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sabri Trader | Premium B2B Sportswear Manufacturing</title>
-<meta name="description" content="Sabri Trader is a premier B2B sportswear manufacturer based in Sialkot, Pakistan. We specialize in export-grade custom teamwear, sublimation, and high-volume wholesale production.">
-<meta name="keywords" content="sportswear manufacturer, Sialkot factory, B2B sportswear, custom team uniforms, wholesale apparel, sublimation clothing, private label sportswear">
-<link rel="canonical" href="https://sabritrader.com/">
-<meta property="og:title" content="Sabri Trader | Premium B2B Sportswear Manufacturing">
-<meta property="og:description" content="Sialkot's leading B2B sportswear factory. Custom engineering for elite athletic brands.">
-<meta property="og:type" content="website">
-<style>
-/* ==========================================
-   1. BILLION-DOLLAR DESIGN VARIABLES (UPGRADED)
-   ========================================== */
-:root {
-    --primary: #ff0033;
-    --primary-glow: rgba(255, 0, 51, 0.8);
-    --secondary-glow: rgba(0, 238, 255, 0.3);
-    --bg-dark: #030305;
-    --bg-surface: rgba(20, 20, 25, 0.6);
-    --text-light: #ffffff;
-    --text-dim: #a0a0b0;
-    --border-subtle: rgba(255,255,255,0.08);
-    --border-highlight: rgba(255, 0, 51, 0.5);
-    --ease-fluid: cubic-bezier(0.25, 1, 0.5, 1);
-    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030305" />
+    <title>Sabri Trader | Premium B2B Sportswear Manufacturer in Sialkot</title>
+    <meta
+      name="title"
+      content="Sabri Trader | Premium B2B Sportswear Manufacturer in Sialkot"
+    />
+    <meta
+      name="description"
+      content="Sabri Trader is a premier B2B sportswear manufacturer based in Sialkot, Pakistan. We specialize in export-grade custom teamwear, sublimation, and high-volume wholesale production."
+    />
+    <meta
+      name="keywords"
+      content="sportswear manufacturer, Sialkot factory, B2B sportswear, custom team uniforms, wholesale apparel, sublimation clothing, private label sportswear"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sabritrader.com/" />
 
-html { scroll-behavior: smooth; }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sabritrader.com/" />
+    <meta
+      property="og:title"
+      content="Sabri Trader | Premium B2B Sportswear Manufacturing"
+    />
+    <meta
+      property="og:description"
+      content="Sialkot's leading B2B sportswear factory. Custom engineering for elite athletic brands."
+    />
+    <meta property="og:image" content="https://sabritrader.com/logo.png" />
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, sans-serif;
-    background-color: var(--bg-dark);
-    background-image: 
-        radial-gradient(circle at 15% 50%, rgba(255, 0, 51, 0.05), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(0, 238, 255, 0.03), transparent 25%);
-    background-attachment: fixed;
-    color: var(--text-light);
-    margin: 0; padding: 0; padding-top: 85px;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sabritrader.com/" />
+    <meta
+      property="twitter:title"
+      content="Sabri Trader | Premium B2B Sportswear Manufacturing"
+    />
+    <meta
+      property="twitter:description"
+      content="Sialkot's leading B2B sportswear factory. Custom engineering for elite athletic brands."
+    />
+    <meta property="twitter:image" content="https://sabritrader.com/logo.png" />
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary), #8a001c); border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #ff3355; }
-
-.container { max-width: 1400px; margin: 0 auto; padding: 20px 50px; }
-
-/* ==========================================
-   2. ULTRA-FROSTED GLASS NAVIGATION
-   ========================================== */
-.navbar {
-    position: fixed; top: 0; left: 0; width: 100%;
-    background: rgba(3, 3, 5, 0.65);
-    backdrop-filter: blur(25px) saturate(180%);
-    -webkit-backdrop-filter: blur(25px) saturate(180%);
-    border-bottom: 1px solid var(--border-subtle);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    z-index: 1000; display: flex; justify-content: space-between; align-items: center;
-    padding: 0 60px; box-sizing: border-box; height: 85px;
-    transform: translateZ(0);
-}
-
-.navbar-brand { 
-    color: #fff; font-size: 28px; font-weight: 900; letter-spacing: 3px; 
-    text-transform: uppercase; cursor: pointer; 
-    text-shadow: 0 0 15px rgba(255,255,255,0.2);
-    transition: all 0.3s ease;
-}
-.navbar-brand:hover { text-shadow: 0 0 25px var(--primary-glow); }
-.navbar-brand span { color: var(--primary); text-shadow: 0 0 15px var(--primary-glow); }
-
-.nav-links { display: flex; gap: 40px; }
-.nav-links a {
-    color: var(--text-dim); text-decoration: none; font-weight: 700; font-size: 13px;
-    cursor: pointer; text-transform: uppercase; letter-spacing: 2px;
-    position: relative; padding: 10px 0; transition: color 0.4s var(--ease-fluid);
-}
-.nav-links a:hover, .nav-links a.active-link { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
-.nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 50%; width: 0%; height: 2px;
-    background: var(--primary); transition: all 0.4s var(--ease-spring);
-    transform: translateX(-50%);
-    box-shadow: 0 0 15px var(--primary-glow);
-}
-.nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
-
-/* ==========================================
-   3. CINEMATIC PAGE TRANSITIONS & ANIMATIONS
-   ========================================== */
-.page {
-    display: none; opacity: 0;
-    transform: translateY(50px) scale(0.98);
-    will-change: transform, opacity;
-}
-.page.active {
-    display: block;
-    animation: pageReveal 0.8s var(--ease-spring) forwards;
-}
-@keyframes pageReveal {
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-/* ==========================================
-   4. HOME HERO ARCHITECTURE (HOLOGRAPHIC)
-   ========================================== */
-.hero {
-    background: linear-gradient(135deg, rgba(20,20,25,0.9) 0%, rgba(5,5,5,1) 100%);
-    border: 1px solid var(--border-subtle);
-    padding: 140px 60px; border-radius: 30px; text-align: center;
-    position: relative; overflow: hidden; margin-bottom: 80px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.05);
-}
-.hero::before {
-    content: ''; position: absolute; top: -50%; left: 50%; width: 150%; height: 200%;
-    background: radial-gradient(ellipse at center, rgba(255,0,51,0.15) 0%, transparent 50%);
-    transform: translateX(-50%); z-index: 1; pointer-events: none;
-    animation: pulseGlow 8s infinite alternate;
-}
-@keyframes pulseGlow {
-    0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
-    100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
-}
-
-.hero-content { position: relative; z-index: 2; }
-.hero h1 { 
-    font-size: 80px; margin: 0 0 20px 0; font-weight: 900; letter-spacing: -2px; 
-    text-transform: uppercase; line-height: 1.1; 
-    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
-}
-.hero h1 span { 
-    background: linear-gradient(90deg, #fff 0%, var(--primary) 50%, #ff8095 100%); 
-    background-size: 200% auto;
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; 
-    animation: shine 4s linear infinite;
-}
-@keyframes shine {
-    to { background-position: 200% center; }
-}
-
-.hero p.hook { 
-    font-size: 24px; color: var(--text-dim); margin: 0 auto 50px auto; 
-    max-width: 850px; line-height: 1.6; font-weight: 400; 
-}
-
-.hero-features { display: flex; justify-content: center; gap: 25px; margin-bottom: 60px; flex-wrap: wrap; }
-.feature {
-    background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px;
-    border: 1px solid var(--border-subtle); width: 250px; 
-    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-    transition: all 0.5s var(--ease-spring); text-align: left;
-    position: relative; overflow: hidden;
-}
-.feature::before {
-    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-    transform: skewX(-20deg); transition: 0.5s;
-}
-.feature:hover::before { left: 150%; }
-.feature:hover { 
-    transform: translateY(-10px) scale(1.03); 
-    background: rgba(255,255,255,0.05); 
-    border-color: var(--border-highlight); 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(255,0,51,0.1);
-}
-.feature h4 { margin: 0 0 12px 0; color: #fff; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; }
-.feature p { margin: 0; font-size: 14px; color: var(--text-dim); line-height: 1.6; }
-
-/* Buttons */
-.btn-main, .btn-secondary, .btn-back {
-    display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
-    text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
-    transition: all 0.4s var(--ease-spring); border: none; outline: none;
-    position: relative; overflow: hidden;
-}
-.btn-main {
-    background: linear-gradient(45deg, #cc0029, var(--primary)); 
-    color: white; padding: 22px 65px;
-    font-size: 16px; border-radius: 100px;
-    box-shadow: 0 10px 30px rgba(255,0,51,0.3); 
-    border: 1px solid rgba(255,255,255,0.2);
-    z-index: 1;
-}
-.btn-main::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(45deg, var(--primary), #ff4d6d);
-    z-index: -1; transition: opacity 0.4s ease; opacity: 0;
-}
-.btn-main:hover::before { opacity: 1; }
-.btn-main:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 20px 50px rgba(255,0,51,0.6), inset 0 0 20px rgba(255,255,255,0.3);
-    letter-spacing: 3px;
-}
-
-.btn-secondary {
-    background: rgba(255,255,255,0.03); color: #fff; padding: 18px;
-    font-size: 13px; border-radius: 12px; width: 100%; margin-top: auto;
-    border: 1px solid var(--border-subtle);
-    backdrop-filter: blur(5px);
-}
-.btn-secondary:hover { 
-    background: #fff; color: #000; 
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
-}
-
-.btn-back {
-    background: transparent; color: var(--text-dim); border: none;
-    padding: 10px 0; cursor: pointer; font-size: 14px; margin-bottom: 30px;
-}
-.btn-back:hover { color: var(--primary); padding-left: 10px; text-shadow: 0 0 10px var(--primary-glow); }
-
-/* ==========================================
-   5. PRODUCT GRID & GALLERY
-   ========================================== */
-.section-title { 
-    text-align: left; color: #fff; font-size: 54px; margin: 0 0 10px 0; 
-    font-weight: 900; text-transform: uppercase; letter-spacing: -1px; 
-    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-.section-subtitle { text-align: left; color: var(--text-dim); margin-bottom: 60px; font-size: 20px; font-weight: 400; max-width: 600px; line-height: 1.5; }
-
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-.card {
-    background: var(--bg-surface); padding: 40px; border-radius: 24px;
-    text-align: left; display: flex; flex-direction: column; justify-content: space-between;
-    border: 1px solid var(--border-subtle); min-height: 220px;
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    transition: all 0.5s var(--ease-spring);
-    opacity: 0; transform: translateY(40px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-.card:hover { 
-    transform: translateY(-12px); 
-    border-color: rgba(255,255,255,0.3); 
-    background: rgba(25,25,30,0.9);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(255,0,51,0.15);
-}
-.card h3 { 
-    margin: 0 0 20px 0; font-size: 26px; color: #fff; 
-    text-transform: uppercase; font-weight: 900; letter-spacing: 1px; 
-}
-
-.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 35px; margin: 40px 0; min-height: 300px; }
-.product-item-box { 
-    background: rgba(255,255,255,0.02); padding: 15px; border-radius: 20px; 
-    border: 1px solid var(--border-subtle); text-align: center; 
-    transition: all 0.5s var(--ease-spring); cursor: pointer; 
-    opacity: 0; transform: translateY(30px);
-}
-.product-item-box:hover { 
-    transform: translateY(-15px) scale(1.03); 
-    border-color: var(--primary);
-    background: rgba(255,255,255,0.05);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 20px rgba(255,0,51,0.2);
-}
-.product-item-box img { 
-    width: 100%; height: 380px; object-fit: cover; border-radius: 12px; 
-    background-color: var(--bg-dark); transition: all 0.5s var(--ease-fluid);
-}
-.product-item-box:hover img { filter: brightness(1.1) contrast(1.1); }
-.product-label { 
-    margin: 20px 0 5px 0; font-size: 14px; font-weight: 800; 
-    color: #fff; text-transform: uppercase; letter-spacing: 2px; 
-}
-
-/* ==========================================
-   6. FABRICS DATA DISPLAY PANEL
-   ========================================== */
-.fabric-section { 
-    margin-bottom: 50px; background: var(--bg-surface); 
-    border: 1px solid var(--border-subtle); border-radius: 24px; 
-    padding: 40px; overflow: hidden; backdrop-filter: blur(15px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-.fabric-section h3 { 
-    font-size: 26px; text-transform: uppercase; letter-spacing: 2px; 
-    margin-top: 0; margin-bottom: 30px; color: var(--primary); font-weight: 900; 
-    text-shadow: 0 0 20px var(--primary-glow);
-}
-
-.fabric-table { width: 100%; border-collapse: collapse; text-align: left; }
-.fabric-table th { 
-    padding: 20px; text-transform: uppercase; font-size: 13px; 
-    letter-spacing: 2px; color: var(--text-dim); 
-    border-bottom: 2px solid rgba(255,255,255,0.1); font-weight: 800;
-}
-.fabric-table td { padding: 22px 20px; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #dedede; transition: all 0.3s ease; }
-.fabric-table tr:last-child td { border-bottom: none; }
-.fabric-table tr { transition: all 0.3s ease; }
-.fabric-table tr:hover { transform: scale(1.01); background: rgba(255,255,255,0.03); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-.fabric-table tr:hover td { color: #fff; }
-.fabric-table td strong { color: #fff; font-weight: 800; font-size: 16px; }
-.fabric-table td.tag { font-family: monospace; font-size: 14px; color: var(--primary); font-weight: bold; }
-
-/* ==========================================
-   7. PRODUCT DETAIL VIEW
-   ========================================== */
-.product-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; margin-top: 20px; align-items: start; }
-.product-image-container img { 
-    width: 100%; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); 
-    box-shadow: 0 40px 80px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.1); 
-    object-fit: cover; background: var(--bg-surface);
-    animation: float 6s ease-in-out infinite;
-}
-.product-specs { 
-    background: var(--bg-surface); padding: 50px; border-radius: 30px; 
-    border: 1px solid var(--border-subtle); backdrop-filter: blur(20px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-}
-.product-specs h2 { 
-    font-size: 48px; margin: 0 0 30px 0; font-weight: 900; 
-    text-transform: uppercase; letter-spacing: 1px; color: #fff;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-.spec-row {
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    padding: 25px 0; display: grid; grid-template-columns: 160px 1fr;
-    align-items: start; gap: 20px; transition: background 0.3s ease;
-}
-.spec-row:hover { background: rgba(255,255,255,0.02); padding-left: 10px; border-radius: 8px; }
-.spec-row span.label { color: var(--text-dim); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;}
-.spec-row span.value { color: #fff; font-size: 17px; font-weight: 800; text-align: left; line-height: 1.5;}
-
-.spec-desc { margin-top: 35px; color: var(--text-dim); line-height: 1.8; font-size: 17px; }
-
-/* ==========================================
-   8. FACTORY PROFILE & PARTNERSHIP
-   ========================================== */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 40px; }
-.factory-profile { 
-    background: var(--bg-surface); padding: 50px; border-radius: 30px; 
-    border: 1px solid var(--border-subtle); backdrop-filter: blur(20px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-}
-.factory-profile p { font-size: 19px; color: var(--text-dim); line-height: 1.8; margin-bottom: 25px; }
-.factory-profile strong { color: #fff; font-weight: 800; }
-
-.contact-action { text-align: left; }
-.contact-action h2 { 
-    font-size: 64px; margin: 0 0 20px 0; font-weight: 900; 
-    line-height: 1.1; text-transform: uppercase;
-    background: linear-gradient(90deg, #fff, var(--primary));
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-}
-
-.spec-bar { display: flex; gap: 50px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 35px; margin-top: 35px; flex-wrap: wrap; }
-.spec-item h5 { margin: 0 0 8px 0; color: var(--primary); font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 900;}
-.spec-item p { margin: 0; color: #fff; font-size: 18px; font-weight: 800;}
-.spec-item a { color: #fff; text-decoration: none; transition: all 0.3s ease; position: relative; }
-.spec-item a::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: -2px; left: 0; background-color: var(--primary); transform-origin: bottom right; transition: transform 0.25s ease-out; }
-.spec-item a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
-.spec-item a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary-glow); }
-
-.scrolled-in { opacity: 1 !important; transform: translateY(0) scale(1) !important; }
-</style>
-</head>
-<body>
-<header>
-<nav class="navbar" id="main-nav">
-<div class="navbar-brand" onclick="showPage('homepage')">Sabri<span>Trader</span></div>
-<div class="nav-links">
-<a onclick="showPage('homepage')" id="nav-homepage" class="active-link" aria-current="page">Home</a>
-<a onclick="showPage('productspage')" id="nav-productspage">Factory Vault</a>
-<a onclick="showPage('fabricspage')" id="nav-fabricspage">Fabrics</a>
-<a onclick="showPage('aboutpage')" id="nav-aboutpage">Partnership</a>
-</div>
-</nav>
-</header>
-<main class="container">
-
-<section id="homepage" class="page active">
-<div class="hero">
-<div class="hero-content">
-<h1>Engineering <span>Dominance</span></h1>
-<p class="hook">We don't just stitch fabrics; we engineer the unseen advantage.
-Operating out of Sialkot, Pakistan, Sabri Trader is the silent manufacturing powerhouse behind elite B2B sportswear.</p>
-
-<div class="hero-features">
-<div class="feature">
-<h4>Precision Quality</h4>
-<p>Export-grade stitching and heavy-duty fabric architecture built for the pros.</p>
-</div>
-<div class="feature">
-<h4>B2B Scalability</h4>
-<p>Engineered for high-volume wholesale distribution and global export.</p>
-</div>
-<div class="feature">
-<h4>Full Customization</h4>
-<p>Bespoke GSM weights, advanced sublimation, and private brand labeling.</p>
-</div>
-</div>
-
-<button class="btn-main" onclick="showPage('productspage')">Access The Vault</button>
-</div>
-</div>
-</section>
-<section id="productspage" class="page">
-<h2 class="section-title">Factory Lines</h2>
-<p class="section-subtitle">Select a category below to securely interface with our real-time manufacturing database.</p>
-
-<div class="grid">
-<div class="card animate-on-scroll"><h3>Baseball</h3><button class="btn-secondary" onclick="openCategory('baseball-garments')">View Collection</button></div>
-<div class="card animate-on-scroll"><h3>Basketball</h3><button class="btn-secondary" onclick="openCategory('basketball-garments')">View Collection</button></div>
-<div class="card animate-on-scroll"><h3>American Football</h3><button class="btn-secondary" onclick="openCategory('american-foot-ball-uniform')">View Collection</button></div>
-<div class="card animate-on-scroll"><h3>Fast Pitch</h3><button class="btn-secondary" onclick="openCategory('fast-pitch-garments')">View Collection</button></div>
-<div class="card animate-on-scroll"><h3>Our Force</h3><button class="btn-secondary" onclick="openCategory('our-force-garments')">View Collection</button></div>
-<div class="card animate-on-scroll"><h3>Soft Ball</h3><button class="btn-secondary" onclick="openCategory('soft-ball-garments')">View Collection</button></div>
-<div class="card animate-on-scroll"><h3>Women Softball</h3><button class="btn-secondary" onclick="openCategory('women-softball-garments')">View Collection</button></div>
-</div>
-</section>
-<section id="fabricspage" class="page">
-<h2 class="section-title">Available Fabrics</h2>
-<p class="section-subtitle">We have a variety of Fabrics available and we can use your required fabrics also.</p>
-
-<div class="fabric-section animate-on-scroll">
-<h3>Knits (Sportswear, Athleisure & Casuals)</h3>
-<table class="fabric-table" summary="Table listing available knitted fabrics for sportswear">
-<thead>
-<tr>
-<th>Target Garment</th>
-<th>Fabric Market Name</th>
-<th>General Composition Architecture</th>
-</tr>
-</thead>
-<tbody>
-<tr><td><strong>Hoodies & Trousers</strong></td><td>Cotton Fleece</td><td class="tag">80% Cotton / 20% Polyester (or 100% Cotton)</td></tr>
-<tr><td><strong>Hoodies & Trousers</strong></td><td>French Terry</td><td class="tag">80% Cotton / 20% Polyester (or 100% Cotton)</td></tr>
-<tr><td><strong>Hoodies & Trousers</strong></td><td>Polyester Fleece</td><td class="tag">100% Polyester</td></tr>
-<tr><td><strong>Hoodies & Trousers</strong></td><td>Tricot</td><td class="tag">100% Polyester</td></tr>
-<tr><td><strong>T-Shirts</strong></td><td>Single Jersey</td><td class="tag">100% Combed Cotton (or 60/40 Cotton-Poly)</td></tr>
-<tr><td><strong>T-Shirts</strong></td><td>Interlock</td><td class="tag">100% Cotton (or 100% Polyester for Sublimation)</td></tr>
-<tr><td><strong>T-Shirts</strong></td><td>Lycra Jersey</td><td class="tag">95% Cotton / 5% Spandex</td></tr>
-<tr><td><strong>Polo Shirts</strong></td><td>Pique (Matty)</td><td class="tag">65% Cotton / 35% Polyester (or 100% Cotton)</td></tr>
-<tr><td><strong>Polo Shirts</strong></td><td>Dry-Fit Pique</td><td class="tag">100% Polyester</td></tr>
-<tr><td><strong>Leggings</strong></td><td>Poly-Spandex</td><td class="tag">85% Polyester / 15% Spandex</td></tr>
-<tr><td><strong>Leggings</strong></td><td>Nylon-Spandex (Supplex)</td><td class="tag">80% Nylon / 20% Spandex</td></tr>
-</tbody>
-</table>
-</div>
-<div class="fabric-section animate-on-scroll">
-<h3>Wovens & Synthetics (Outerwear & Athletic Shorts)</h3>
-<table class="fabric-table" summary="Table listing available woven and synthetic fabrics for outerwear">
-<thead>
-<tr>
-<th>Target Garment</th>
-<th>Fabric Market Name</th>
-<th>General Composition Architecture</th>
-</tr>
-</thead>
-<tbody>
-<tr><td><strong>Shorts</strong></td><td>Microfiber / Taslan</td><td class="tag">100% Polyester or 100% Nylon</td></tr>
-<tr><td><strong>Shorts</strong></td><td>Polyester Mesh</td><td class="tag">100% Polyester</td></tr>
-<tr><td><strong>Shorts</strong></td><td>4-Way Stretch</td><td class="tag">90% Polyester / 10% Spandex</td></tr>
-<tr><td><strong>Softshell Jackets</strong></td><td>3-Layer Bonded Softshell</td><td class="tag">100% Polyester face + TPU Membrane + Microfleece backing</td></tr>
-<tr><td><strong>Puffer Jackets & Gilets</strong></td><td>Taffeta</td><td class="tag">100% Nylon or 100% Polyester</td></tr>
-<tr><td><strong>Puffer Jackets & Gilets</strong></td><td>Ripstop</td><td class="tag">100% Nylon or 100% Polyester</td></tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="aboutpage" class="page">
-<div class="about-grid">
-<div class="contact-action animate-on-scroll">
-<h2>Bypass The<br>Middleman.</h2>
-<p style="font-size: 20px; color: var(--text-dim); margin-bottom: 40px; line-height: 1.5;">Direct executive line to the factory operations floor.</p>
-<a href="mailto:info@sabritrader.com?subject=B2B%20Manufacturing%20Inquiry" class="btn-main">Email Factory Direct</a>
-</div>
-
-<div class="factory-profile animate-on-scroll">
-<p>Located in the manufacturing heart of <strong>Sialkot, Pakistan</strong>, Sabri Trader bridges the gap between raw industrial capacity and premium retail finishing.</p>
-<p>We are not a trading house; <strong>we are the factory floor.</strong> By partnering directly with management, you eliminate third-party markups while securing export-grade quality control.</p>
-
-<div class="spec-bar">
-<div class="spec-item"><h5>CEO Management</h5><p>Rana Naeem</p></div>
-<div class="spec-item"><h5>Official Routing</h5><p><a href="mailto:info@sabritrader.com">info@sabritrader.com</a></p></div>
-<div class="spec-item"><h5>Direct WhatsApp</h5><p><a href="https://wa.me/00923216119491" target="_blank">+92 3216119491</a></p></div>
-</div>
-</div>
-</div>
-</section>
-<section id="catalogpage" class="page">
-<button class="btn-back" onclick="showPage('productspage')">← Return to Vault</button>
-<h1 id="catalog-title" class="section-title" style="margin-top: 10px;">Collection</h1>
-
-<div class="spec-bar animate-on-scroll" style="margin-top: 20px; padding-bottom: 30px; border-bottom: 1px solid var(--border-subtle);">
-<div class="spec-item"><h5>Custom Options</h5><p>Fabrics, GSM, Print, Private Label</p></div>
-<div class="spec-item"><h5>Instructions</h5><p style="color: var(--text-dim); font-weight: normal; font-size: 14px;">Click an item to view specifications.</p></div>
-</div>
-
-<div id="image-gallery-container" class="gallery"></div>
-</section>
-<section id="productdetailpage" class="page">
-<button class="btn-back" onclick="showPage('catalogpage')">← Return to Collection</button>
-<div class="product-layout animate-on-scroll">
-<div class="product-image-container">
-<img id="detail-image" src="" alt="Product Specification View">
-</div>
-<div class="product-specs">
-<h2 id="detail-title">ARTICLE NAME</h2>
-
-<div class="spec-row">
-<span class="label">Fabric Options:</span>
-<span class="value">Please visit the available fabrics section. Also we can source from your trusted supplier too!</span>
-</div>
-
-<div class="spec-desc">
-<strong>Please <a href="#" onclick="showPage('fabricspage'); return false;" style="color: var(--primary); text-decoration: underline;">click here</a> to see available fabrics.</strong><br><br>
-DTF, DTG, Sublimation, Embroidery are available.
-</div>
-<a id="detail-mail-btn" href="#" class="btn-main" style="width: 100%; text-align: center; margin-top: 40px; box-sizing: border-box;">REQUEST QUOTE FOR THIS ARTICLE</a>
-</div>
-</div>
-</section>
-</main>
-<script>
-// Scroll Animation Observer
-const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('scrolled-in');
+    <!-- Enhanced Structured Data for Google Crawler Mastery -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "Sabri Trader",
+        "description": "Premium B2B Sportswear & Teamwear Manufacturer based in Sialkot, Pakistan.",
+        "url": "https://sabritrader.com",
+        "logo": "https://sabritrader.com/logo.png",
+        "image": "https://sabritrader.com/logo.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Rana Naeem"
+        },
+        "email": "info@sabritrader.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sialkot",
+          "addressRegion": "Punjab",
+          "addressCountry": "PK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+92-321-6119491",
+          "contactType": "B2B Sales Support",
+          "availableLanguage": ["en", "Urdu"]
         }
-    });
-}, { threshold: 0.05 });
-document.querySelectorAll('.animate-on-scroll, .card').forEach(el => scrollObserver.observe(el));
+      }
+    </script>
 
-// Page Navigation Logic
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
+    <style>
+      /* ==========================================
+         1. ULTRA-PREMIUM DESIGN VARIABLES
+         ========================================== */
+      :root {
+        --primary: #ff0033;
+        --primary-dark: #b30024;
+        --primary-glow: rgba(255, 0, 51, 0.9);
+        --primary-neon: rgba(255, 51, 85, 1);
+        --secondary: #00eeff;
+        --secondary-glow: rgba(0, 238, 255, 0.7);
+        --secondary-neon: rgba(0, 238, 255, 1);
+        --bg-dark: #030305;
+        --bg-deep: #010102;
+        --bg-surface: rgba(15, 15, 20, 0.45);
+        --text-light: #ffffff;
+        --text-dim: #a0a0b0;
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --border-highlight: rgba(255, 0, 51, 0.8);
+        --glass-bg: rgba(10, 10, 15, 0.65);
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --ease-fluid: cubic-bezier(0.25, 1, 0.5, 1);
+        --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        --ease-snappy: cubic-bezier(0.85, 0, 0.15, 1);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        font-size: 16px; /* Optimized base size for crisp accessibility layouts */
+      }
 
-    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active-link'));
-    if(pageId === 'catalogpage' || pageId === 'productdetailpage') {
-        document.getElementById('nav-productspage').classList.add('active-link');
-    } else {
-        const activeNav = document.getElementById('nav-' + pageId);
-        if(activeNav) activeNav.classList.add('active-link');
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+      /* ==========================================
+         BODY & ADVANCED ANIMATED BACKGROUNDS
+         ========================================== */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-deep);
+        color: var(--text-light);
+        margin: 0;
+        padding: 0;
+        padding-top: 80px; 
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.6;
+        position: relative;
+        z-index: 0;
+      }
+      /* Enhanced Breathing Mesh Gradient Background */
+      body::before {
+        content: "";
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background:
+          radial-gradient(circle at 20% 30%, rgba(255, 0, 51, 0.12) 0%, transparent 40%),
+          radial-gradient(circle at 80% 70%, rgba(0, 238, 255, 0.08) 0%, transparent 40%),
+          radial-gradient(circle at 50% 50%, rgba(20, 20, 25, 1) 0%, var(--bg-deep) 100%);
+        z-index: -2;
+        animation: breathMesh 15s var(--ease-fluid) infinite alternate;
+        pointer-events: none;
+      }
+      /* Cybernetic Grid Overlay */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: -1;
+        pointer-events: none;
+        transform: perspective(600px) rotateX(15deg) translateY(-20px) scale(1.1);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 60%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%, transparent 100%);
+        animation: gridMove 20s linear infinite;
+      }
+      @keyframes gridMove {
+        0% { transform: perspective(600px) rotateX(15deg) translateY(0) scale(1.1); }
+        100% { transform: perspective(600px) rotateX(15deg) translateY(50px) scale(1.1); }
+      }
+      @keyframes breathMesh {
+        0% { transform: scale(1) rotate(0deg) translate(0, 0); }
+        100% { transform: scale(1.15) rotate(3deg) translate(-20px, 20px); }
+      }
+      /* Neon Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-deep);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--secondary-glow), var(--primary), #4a000f);
+        border-radius: 20px;
+        border: 2px solid var(--bg-deep);
+        transition: background 0.3s;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, var(--secondary-neon), #ff335c, var(--primary));
+        box-shadow: 0 0 20px var(--primary-glow);
+      }
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px clamp(15px, 4vw, 50px);
+      }
+      /* ==========================================
+         2. NAVIGATION (Responsive Navigation Design)
+         ========================================== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(3, 3, 5, 0.75);
+        backdrop-filter: blur(40px) saturate(250%);
+        -webkit-backdrop-filter: blur(40px) saturate(250%);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 clamp(15px, 4vw, 40px);
+        height: 75px;
+        transform: translateZ(0);
+        transition: all 0.5s var(--ease-snappy);
+      }
+      .navbar::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+        opacity: 0.7;
+        background-size: 200% 100%;
+        animation: neonBarMove 4s linear infinite;
+      }
+      @keyframes neonBarMove {
+        0% { background-position: 100% 0; }
+        100% { background-position: -100% 0; }
+      }
+      .navbar-brand {
+        color: #fff;
+        font-size: clamp(20px, 2.5vw, 24px);
+        font-weight: 900;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.5s var(--ease-bounce);
+        cursor: pointer;
+        background: none;
+        border: none;
+        position: relative;
+      }
+      .navbar-brand:hover {
+        transform: scale(1.05) rotate(-1deg);
+        text-shadow: 0 0 40px var(--primary-glow), 0 0 20px var(--secondary-glow);
+        letter-spacing: 4px;
+      }
+      .navbar-brand span {
+        color: var(--primary);
+        text-shadow: 0 0 25px var(--primary-glow);
+        position: relative;
+        transition: color 0.3s;
+      }
+      .navbar-brand:hover span {
+        color: var(--secondary);
+        text-shadow: 0 0 25px var(--secondary-glow);
+      }
+      .nav-links {
+        display: flex;
+        gap: clamp(12px, 2.5vw, 30px);
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--text-dim);
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        position: relative;
+        padding: 8px 0;
+        transition: all 0.4s var(--ease-spring);
+      }
+      .nav-links a:hover,
+      .nav-links a.active-link {
+        color: #fff;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        transform: translateY(-2px);
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        transition: all 0.4s var(--ease-spring);
+        transform: translateX(-50%);
+        box-shadow: 0 0 20px var(--secondary-neon);
+        border-radius: 5px;
+      }
+      .nav-links a:hover::after,
+      .nav-links a.active-link::after {
+        width: 100%;
+      }
+      /* ==========================================
+         3. PAGE TRANSITIONS & KEYFRAMES
+         ========================================== */
+      .page {
+        display: none;
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+        will-change: transform, opacity;
+      }
+      .page.active {
+        display: block;
+        animation: pageReveal 0.6s var(--ease-fluid) forwards;
+      }
+      @keyframes pageReveal {
+        0% {
+          opacity: 0;
+          transform: translateY(40px) scale(0.97);
+          filter: blur(5px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+      }
+      @keyframes floatExtreme {
+        0%, 100% { transform: translateY(0px) scale(1); filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.8)); }
+        50% { transform: translateY(-15px) scale(1.02); filter: drop-shadow(0 40px 50px rgba(255, 0, 51, 0.15)); }
+      }
+      @keyframes shimmer {
+        0% { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+      /* ==========================================
+         4. HERO SECTION
+         ========================================== */
+      .hero {
+        background: linear-gradient(135deg, rgba(20, 20, 25, 0.85) 0%, rgba(5, 5, 5, 0.98) 100%);
+        border: 1px solid var(--border-subtle);
+        padding: clamp(40px, 6vw, 100px) clamp(15px, 4vw, 40px);
+        border-radius: 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px;
+        box-shadow: 0 50px 120px rgba(0, 0, 0, 0.95), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(30px);
+        transition: transform 0.6s var(--ease-spring);
+      }
+      .hero:hover {
+        transform: translateY(-3px);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 3;
+      }
+      .hero h1 {
+        font-size: clamp(2.2rem, 5vw, 4.2rem);
+        margin: 0 0 20px 0;
+        font-weight: 900;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        line-height: 1.1;
+      }
+      .hero h1 span {
+        background: linear-gradient(90deg, #fff 0%, var(--primary) 30%, var(--secondary) 70%, #fff 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 3s linear infinite;
+        display: inline-block;
+        filter: drop-shadow(0 0 30px var(--primary-glow));
+      }
+      .hero p.hook {
+        font-size: clamp(1rem, 1.8vw, 1.3rem);
+        color: var(--text-dim);
+        margin: 0 auto 40px auto;
+        max-width: 850px;
+        line-height: 1.7;
+      }
+      .hero-features {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+      .feature {
+        background: var(--glass-bg);
+        padding: 25px;
+        border-radius: 25px;
+        border: 1px solid var(--border-subtle);
+        width: 100%;
+        max-width: 320px;
+        backdrop-filter: blur(25px);
+        transition: all 0.5s var(--ease-fluid);
+        text-align: left;
+      }
+      .feature:hover {
+        transform: translateY(-8px);
+        border-color: rgba(0, 238, 255, 0.5);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 238, 255, 0.1);
+      }
+      .feature h2 {
+        margin: 0 0 12px 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+      }
+      .feature:hover h2 {
+        color: var(--secondary);
+      }
+      .feature h2::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+        margin-right: 12px;
+        box-shadow: 0 0 10px var(--primary-glow);
+      }
+      .feature p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--text-dim);
+        line-height: 1.6;
+      }
+      /* ==========================================
+         5. BUTTONS
+         ========================================== */
+      .btn-main, .btn-secondary, .btn-back {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.4s var(--ease-fluid);
+        border: none;
+        font-family: inherit;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-main {
+        background: linear-gradient(45deg, var(--primary-dark), var(--primary), #ff335c, var(--secondary), var(--primary));
+        background-size: 400% 400%;
+        color: white;
+        padding: 16px 45px;
+        font-size: 15px;
+        border-radius: 100px;
+        box-shadow: 0 15px 40px rgba(255, 0, 51, 0.4);
+        animation: bgShift 5s ease infinite;
+        z-index: 1;
+      }
+      @keyframes bgShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .btn-main:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 25px 50px rgba(255, 0, 51, 0.6), 0 0 30px var(--primary-glow);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.04);
+        color: #fff;
+        padding: 14px;
+        font-size: 13px;
+        border-radius: 14px;
+        width: 100%;
+        margin-top: auto;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(15px);
+      }
+      .btn-secondary:hover {
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        color: #000;
+        border-color: transparent;
+        transform: translateY(-4px);
+        box-shadow: 0 15px 30px rgba(0, 238, 255, 0.25);
+      }
+      .btn-back {
+        background: transparent;
+        color: var(--text-dim);
+        padding: 12px 0;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      .btn-back:hover {
+        color: var(--secondary);
+        transform: translateX(-5px);
+      }
+      /* ==========================================
+         6. LAYOUTS, GRIDS & NEON CARDS
+         ========================================== */
+      .section-title {
+        font-size: clamp(1.8rem, 3.5vw, 3rem);
+        margin: 0 0 10px 0;
+        font-weight: 900;
+        text-transform: uppercase;
+        background: linear-gradient(180deg, #ffffff 0%, #a0a0b0 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .section-subtitle {
+        color: var(--text-dim);
+        margin-bottom: 40px;
+        font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+        max-width: 800px;
+        line-height: 1.6;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: 25px;
+      }
+      .card {
+        background: var(--bg-surface);
+        padding: 30px 25px;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid var(--border-subtle);
+        min-height: 200px;
+        transition: all 0.5s var(--ease-fluid);
+        position: relative;
+        backdrop-filter: blur(20px);
+        overflow: hidden;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, rgba(0, 238, 255, 0.03));
+        opacity: 0;
+        transition: opacity 0.4s;
+        pointer-events: none;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(255, 0, 51, 0.4);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 0, 51, 0.1);
+      }
+      .card:hover::after {
+        opacity: 1;
+      }
+      .card h3 {
+        font-size: 20px;
+        margin: 0 0 15px 0;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+        gap: 30px;
+        margin: 40px 0;
+      }
+      .product-item-box {
+        background: var(--glass-bg);
+        padding: 15px;
+        border-radius: 20px;
+        border: 1px solid var(--border-subtle);
+        text-align: center;
+        transition: all 0.5s var(--ease-fluid);
+        cursor: pointer;
+        backdrop-filter: blur(15px);
+      }
+      .product-item-box:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 0, 51, 0.2);
+      }
+      .product-item-box img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        border-radius: 14px;
+        background-color: var(--bg-dark);
+        transition: transform 0.5s var(--ease-fluid);
+      }
+      .product-item-box:hover img {
+        transform: scale(1.03);
+      }
+      .product-label {
+        margin: 15px 0 5px 0;
+        font-size: 15px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+      }
+      .product-item-box:hover .product-label {
+        color: var(--secondary);
+      }
+      /* ==========================================
+         7. TABLES & FABRICS
+         ========================================== */
+      .fabric-section {
+        margin-bottom: 40px;
+        background: linear-gradient(145deg, rgba(20, 20, 25, 0.7), rgba(10, 10, 15, 0.9));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: clamp(20px, 4vw, 40px);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(25px);
+      }
+      .fabric-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .fabric-section h3 {
+        font-size: 22px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-top: 0;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+      }
+      .fabric-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        min-width: 650px;
+      }
+      .fabric-table th {
+        padding: 15px;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: var(--text-dim);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        text-align: left;
+      }
+      .fabric-table td {
+        padding: 18px 15px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        transition: all 0.3s;
+      }
+      .fabric-table tr:hover td {
+        background: rgba(255, 255, 255, 0.02);
+        color: #fff;
+      }
+      .fabric-table td strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .fabric-table td.tag {
+        font-family: inherit;
+        font-size: 13px;
+        color: var(--secondary);
+        background: rgba(0, 238, 255, 0.06);
+        padding: 6px 12px;
+        border-radius: 8px;
+        display: inline-block;
+        border: 1px solid rgba(0, 238, 255, 0.2);
+      }
+      /* ==========================================
+         8. PRODUCT DETAILS & ABOUT
+         ========================================== */
+      .product-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 20px;
+      }
+      @media (min-width: 992px) {
+        .product-layout {
+          grid-template-columns: 1fr 1.2fr;
+          gap: 60px;
+        }
+        .about-grid {
+          grid-template-columns: 1fr 1.2fr !important;
+          gap: 50px !important;
+        }
+      }
+      .product-image-container {
+        position: relative;
+      }
+      .product-image-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        animation: floatExtreme 6s ease-in-out infinite;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9);
+      }
+      .product-specs, .factory-profile {
+        background: linear-gradient(135deg, rgba(20, 20, 25, 0.85), rgba(10, 10, 15, 0.95));
+        padding: clamp(25px, 4vw, 40px);
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+      }
+      .product-specs h1 {
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        text-transform: uppercase;
+        margin: 0 0 25px 0;
+        letter-spacing: 1px;
+      }
+      .spec-row {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 16px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      @media (min-width: 576px) {
+        .spec-row {
+          grid-template-columns: 160px 1fr;
+          gap: 20px;
+        }
+      }
+      .spec-row span.label {
+        color: var(--secondary);
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+      .spec-row span.value {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .spec-desc {
+        margin-top: 30px;
+        color: var(--text-dim);
+        font-size: 15px;
+        line-height: 1.7;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      /* ==========================================
+         9. ABOUT SECTION & FOOTER ELEMENTS
+         ========================================== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 30px;
+      }
+      .contact-action h1 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        margin: 0 0 20px 0;
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.1;
+        background: linear-gradient(90deg, #fff, var(--secondary), var(--primary), #fff);
+        background-size: 300% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 6s linear infinite;
+      }
+      .factory-profile p {
+        font-size: 15px;
+        color: var(--text-dim);
+        margin-top: 0;
+        margin-bottom: 20px;
+        line-height: 1.7;
+      }
+      .factory-profile strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .spec-bar {
+        display: flex;
+        gap: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-top: 25px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+      }
+      .spec-item h2 {
+        margin: 0 0 6px 0;
+        color: var(--secondary);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .spec-item p {
+        margin: 0;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .spec-item a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .spec-item a:hover {
+        color: var(--secondary);
+      }
+      /* ==========================================
+         9.5. CONTACT FORM
+         ========================================== */
+      .contact-form-container {
+        background: var(--glass-bg);
+        padding: clamp(20px, 4vw, 40px);
+        border-radius: 24px;
+        border: 1px solid var(--glass-border);
+        max-width: 850px;
+        margin: 30px auto 0;
+        backdrop-filter: blur(30px);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+      }
+      .form-group {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      @media (min-width: 576px) {
+        .form-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+      }
+      .form-group label {
+        color: var(--secondary);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+      .form-group input {
+        background: rgba(5, 5, 10, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        padding: 14px 18px;
+        border-radius: 12px;
+        font-size: 16px; /* Strict guideline compliance: Prevent auto-zoom system triggers on iOS Safari */
+        font-family: inherit;
+        transition: all 0.3s;
+      }
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--secondary);
+        box-shadow: 0 0 15px rgba(0, 238, 255, 0.2);
+        background: rgba(10, 10, 15, 0.95);
+      }
+      .form-group input::placeholder {
+        color: rgba(255, 255, 255, 0.25);
+      }
+      /* ==========================================
+         10. UTILITIES & LOADERS
+         ========================================== */
+      .loader {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 60px auto;
+      }
+      .loader::before, .loader::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        border: 4px solid transparent;
+      }
+      .loader::before {
+        top: 0; left: 0; right: 0; bottom: 0;
+        border-top-color: var(--primary);
+        border-bottom-color: var(--primary);
+        animation: spinLoader 1.2s linear infinite;
+      }
+      .loader::after {
+        top: 10px; left: 10px; right: 10px; bottom: 10px;
+        border-left-color: var(--secondary);
+        border-right-color: var(--secondary);
+        animation: spinLoader 0.8s linear infinite reverse;
+      }
+      @keyframes spinLoader {
+        100% { transform: rotate(360deg); }
+      }
 
-// Open Specific Product Details
-function openProductDetail(imagePath, articleName) {
-    document.getElementById('detail-image').src = imagePath;
-    document.getElementById('detail-title').innerText = articleName;
-    document.getElementById('detail-mail-btn').href = "mailto:info@sabritrader.com?subject=B2B%20Order%20Inquiry:%20" + encodeURIComponent(articleName);
-    showPage('productdetailpage');
-}
+      /* Mobile Menu Responsiveness Strategy */
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 0 15px;
+          height: 65px;
+        }
+        body {
+          padding-top: 65px;
+        }
+        .nav-links {
+          gap: 10px;
+        }
+        .nav-links a {
+          font-size: 11px;
+          letter-spacing: 0.5px;
+        }
+        .fabric-section {
+          padding: 15px;
+        }
+      }
+      @media (max-width: 480px) {
+        .nav-links {
+          display: flex;
+          overflow-x: auto;
+          white-space: nowrap;
+          max-width: 65%;
+          padding-bottom: 3px;
+          -webkit-overflow-scrolling: touch;
+        }
+        .nav-links::-webkit-scrollbar {
+          display: none;
+        }
+        .navbar-brand {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" id="main-nav" aria-label="Main navigation">
+        <a href="#homepage" class="navbar-brand" onclick="showPage('homepage'); return false;">
+          Sabri<span>Trader</span>
+        </a>
+        <div class="nav-links">
+          <a href="#homepage" id="nav-homepage" class="active-link" aria-current="page" onclick="showPage('homepage'); return false;">Home</a>
+          <a href="#productspage" id="nav-productspage" onclick="showPage('productspage'); return false;">Factory Vault</a>
+          <a href="#fabricspage" id="nav-fabricspage" onclick="showPage('fabricspage'); return false;">Fabrics</a>
+          <a href="#aboutpage" id="nav-aboutpage" onclick="showPage('aboutpage'); return false;">Partnership</a>
+          <a href="#contactpage" id="nav-contactpage" onclick="showPage('contactpage'); return false;">Contact</a>
+        </div>
+      </nav>
+    </header>
 
-// ==========================================
-// THE 1,000,000 IQ UPGRADE: API CONNECTION
-// ==========================================
-async function openCategory(categoryName) {
-    document.getElementById('catalog-title').innerText = categoryName.replace(/-/g, ' ').toUpperCase();
-    const gallery = document.getElementById('image-gallery-container');
-    
-    // Premium Loading State
-    gallery.innerHTML = '<p id="loading-text" style="color: var(--primary); font-weight: 900; font-size: 18px; text-transform: uppercase; letter-spacing: 4px; grid-column: 1 / -1; text-align: center; padding: 120px; animation: pulseGlow 1.5s infinite alternate;">📡 SECURELY FETCHING FROM FACTORY VAULT...</p>';
-    
-    showPage('catalogpage');
+    <main class="container">
+      <!-- HOMEPAGE SECTION -->
+      <section id="homepage" class="page active" aria-labelledby="home-h1">
+        <div class="hero">
+          <div class="hero-content">
+            <h1 id="home-h1">Engineering <span>Dominance</span></h1>
+            <p class="hook">
+              We don't just stitch fabrics; we engineer the unseen advantage.
+              Operating out of Sialkot, Pakistan, Sabri Trader is the silent
+              manufacturing powerhouse behind elite B2B sportswear.
+            </p>
+            <div class="hero-features">
+              <div class="feature">
+                <h2>Precision Quality</h2>
+                <p>Export-grade stitching and heavy-duty fabric architecture built for the pros.</p>
+              </div>
+              <div class="feature">
+                <h2>B2B Scalability</h2>
+                <p>Engineered for high-volume wholesale distribution and global export.</p>
+              </div>
+              <div class="feature">
+                <h2>Full Customization</h2>
+                <p>Bespoke GSM weights, advanced sublimation, and private brand labeling.</p>
+              </div>
+            </div>
+            <button class="btn-main" onclick="showPage('productspage')">Access The Vault</button>
+          </div>
+        </div>
+      </section>
 
-    try {
-        // INSTANTLY requests exact file names from your Node.js engine
-        const response = await fetch(`/api/vault/${categoryName}`);
-        
-        if (!response.ok) throw new Error("Vault access denied or backend not running.");
-        
-        const data = await response.json();
-        gallery.innerHTML = ''; // Clear the loading text
+      <!-- PRODUCTS LINE SECTION -->
+      <section id="productspage" class="page" aria-labelledby="products-h2">
+        <h2 id="products-h2" class="section-title">Factory Lines</h2>
+        <p class="section-subtitle">
+          Select a category below to securely interface with our real-time manufacturing database.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>American Football</h3>
+            <button class="btn-secondary" onclick="openCategory('american-foot-ball-uniform')">View Collection</button>
+          </div>
+          <div class="card">
+            <h3>Baseball</h3>
+            <button class="btn-secondary" onclick="openCategory('baseball-garments')">View Collection</button>
+          </div>
+          <div class="card">
+            <h3>Basketball</h3>
+            <button class="btn-secondary" onclick="openCategory('basketball-garments')">View Collection</button>
+          </div>
+          <div class="card">
+            <h3>Fast Pitch</h3>
+            <button class="btn-secondary" onclick="openCategory('fast-pitch-garments')">View Collection</button>
+          </div>
+          <div class="card">
+            <h3>Our Force</h3>
+            <button class="btn-secondary" onclick="openCategory('our-force-garments')">View Collection</button>
+          </div>
+          <div class="card">
+            <h3>Soft Ball</h3>
+            <button class="btn-secondary" onclick="openCategory('soft-ball-garments')">View Collection</button>
+          </div>
+          <div class="card">
+            <h3>Women Softball</h3>
+            <button class="btn-secondary" onclick="openCategory('women-softball-garments')">View Collection</button>
+          </div>
+        </div>
+      </section>
 
-        // If folder is empty
-        if (data.files.length === 0) {
-            gallery.innerHTML = '<div style="grid-column: 1 / -1; padding: 60px; text-align: center; background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px solid var(--border-subtle);"><h3 style="color: white; margin-bottom: 10px;">VAULT EMPTY</h3><p style="color: var(--text-dim); font-size: 16px;">No articles found in this specific production line.</p></div>';
+      <!-- FABRICS PAGE SECTION -->
+      <section id="fabricspage" class="page" aria-labelledby="fabrics-h2">
+        <h2 id="fabrics-h2" class="section-title">Available Fabrics</h2>
+        <p class="section-subtitle">
+          We have a variety of Fabrics available and we can use your required fabrics also.
+        </p>
+
+        <div class="fabric-section">
+          <h3>Knits (Sportswear, Athleisure & Casuals)</h3>
+          <div class="fabric-wrapper">
+            <table class="fabric-table">
+              <thead>
+                <tr>
+                  <th>Target Garment</th>
+                  <th>Fabric Market Name</th>
+                  <th>General Composition Architecture</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Hoodies & Trousers</strong></td>
+                  <td>Cotton Fleece</td>
+                  <td><span class="tag">80% Cotton / 20% Polyester (or 100% Cotton)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Hoodies & Trousers</strong></td>
+                  <td>French Terry</td>
+                  <td><span class="tag">80% Cotton / 20% Polyester (or 100% Cotton)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Hoodies & Trousers</strong></td>
+                  <td>Polyester Fleece</td>
+                  <td><span class="tag">100% Polyester</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Hoodies & Trousers</strong></td>
+                  <td>Tricot</td>
+                  <td><span class="tag">100% Polyester</span></td>
+                </tr>
+                <tr>
+                  <td><strong>T-Shirts</strong></td>
+                  <td>Single Jersey</td>
+                  <td><span class="tag">100% Combed Cotton (or 60/40 Cotton-Poly)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>T-Shirts</strong></td>
+                  <td>Interlock</td>
+                  <td><span class="tag">100% Cotton (or 100% Polyester for Sublimation)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>T-Shirts</strong></td>
+                  <td>Lycra Jersey</td>
+                  <td><span class="tag">95% Cotton / 5% Spandex</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Polo Shirts</strong></td>
+                  <td>Pique (Matty)</td>
+                  <td><span class="tag">65% Cotton / 35% Polyester (or 100% Cotton)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Polo Shirts</strong></td>
+                  <td>Dry-Fit Pique</td>
+                  <td><span class="tag">100% Polyester</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Leggings</strong></td>
+                  <td>Poly-Spandex</td>
+                  <td><span class="tag">85% Polyester / 15% Spandex</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Leggings</strong></td>
+                  <td>Nylon-Spandex (Supplex)</td>
+                  <td><span class="tag">80% Nylon / 20% Spandex</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fabric-section">
+          <h3>Wovens & Synthetics (Outerwear & Athletic Shorts)</h3>
+          <div class="fabric-wrapper">
+            <table class="fabric-table">
+              <thead>
+                <tr>
+                  <th>Target Garment</th>
+                  <th>Fabric Market Name</th>
+                  <th>General Composition Architecture</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Shorts</strong></td>
+                  <td>Microfiber / Taslan</td>
+                  <td><span class="tag">100% Polyester or 100% Nylon</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Shorts</strong></td>
+                  <td>Polyester Mesh</td>
+                  <td><span class="tag">100% Polyester</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Shorts</strong></td>
+                  <td>4-Way Stretch</td>
+                  <td><span class="tag">90% Polyester / 10% Spandex</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Softshell Jackets</strong></td>
+                  <td>3-Layer Bonded Softshell</td>
+                  <td><span class="tag">100% Polyester face + TPU Membrane + Microfleece backing</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Puffer Jackets & Gilets</strong></td>
+                  <td>Taffeta</td>
+                  <td><span class="tag">100% Nylon or 100% Polyester</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Puffer Jackets & Gilets</strong></td>
+                  <td>Ripstop</td>
+                  <td><span class="tag">100% Nylon or 100% Polyester</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT & PARTNERSHIP SECTION -->
+      <section id="aboutpage" class="page" aria-labelledby="about-h2">
+        <div class="about-grid">
+          <div class="contact-action">
+            <h1 id="about-h2">About Us &<br />Partnership</h1>
+            <p style="font-size: 1.1rem; color: var(--text-dim); margin-bottom: 40px; line-height: 1.8;">
+              Direct executive line to the factory operations floor.
+            </p>
+            <a href="mailto:info@sabritrader.com?subject=B2B%20Manufacturing%20Inquiry" class="btn-main">Email Factory Direct</a>
+          </div>
+          <div class="factory-profile">
+            <p>
+              <strong>Welcome to Sabri Trader.</strong> As a premier producer
+              and exporter of B2B sportswear, teamwear, and custom athletic
+              apparel, we bring modern manufacturing precision to the world of
+              sports. Located in the manufacturing heart of Sialkot, Pakistan,
+              we bridge the gap between raw industrial capacity and premium
+              retail finishing.
+            </p>
+            <p>
+              One of our key strengths is catering to the specific needs of our
+              customers by offering <strong>low Minimum Order Quantities (MOQ)</strong>
+              for custom designs. This allows sports teams, clubs, gyms, and
+              emerging brands to have their own unique branding on jerseys,
+              shorts, gloves, and other sports accessories without having to
+              place massive wholesale orders.
+            </p>
+            <p>
+              Our manufacturing process is characterized by precision, attention
+              to detail, and the use of advanced technologies. We are not just a
+              trading house; <strong>we are the factory floor.</strong> We
+              maintain a highly skilled workforce that ensures every product is
+              meticulously crafted to meet the highest standards of quality and
+              durability.
+            </p>
+            <p>
+              Sabri Trader’s commitment to customer satisfaction goes beyond
+              just manufacturing. We strive to establish long-lasting
+              relationships with our clients globally by providing excellent
+              customer service, timely delivery, and highly competitive pricing.
+              Whether your focus is soccer, basketball, cricket, or any other
+              discipline, we are well-equipped to meet your unique requirements
+              and exceed your expectations.
+            </p>
+            <div class="spec-bar">
+              <div class="spec-item">
+                <h2>CEO Management</h2>
+                <p>Rana Naeem</p>
+              </div>
+              <div class="spec-item">
+                <h2>Official Routing</h2>
+                <p><a href="mailto:info@sabritrader.com">info@sabritrader.com</a></p>
+              </div>
+              <div class="spec-item">
+                <h2>Direct WhatsApp</h2>
+                <p>
+                  <a href="https://wa.me/923216119491" target="_blank" rel="noopener noreferrer">+92 3216119491</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contactpage" class="page" aria-labelledby="contact-form-h2">
+        <h2 id="contact-form-h2" class="section-title">Contact Us</h2>
+        <p class="section-subtitle">
+          Submit your details below to establish a direct connection with our manufacturing team.
+        </p>
+        <div class="contact-form-container">
+          <form id="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Form Successfully Initialized!');">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="Enter your email address" />
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="whatsapp">WhatsApp Number</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+1 555 123 4567" />
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required placeholder="Your City" />
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required placeholder="Street address" />
+              </div>
+              <div class="form-group">
+                <label for="postal">Postal Code</label>
+                <input type="text" id="postal" name="postal" required placeholder="Postal / Zip Code" />
+              </div>
+            </div>
+            <button type="submit" class="btn-main" style="width: 100%; margin-top: 20px;">Send Secure Message</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- CATALOG PAGE SECTION -->
+      <section id="catalogpage" class="page" aria-labelledby="catalog-h1">
+        <button class="btn-back" onclick="showPage('productspage')">&larr; Return to Vault</button>
+        <h1 id="catalog-h1" class="section-title" style="margin-top: 10px;">Collection</h1>
+        <div class="spec-bar" style="margin-top: 20px; padding-bottom: 30px; border-bottom: 1px solid var(--border-subtle);">
+          <div class="spec-item">
+            <h2>Custom Options</h2>
+            <p>Fabrics, GSM, Print, Private Label</p>
+          </div>
+          <div class="spec-item">
+            <h2>Instructions</h2>
+            <p style="color: var(--text-dim); font-weight: normal; font-size: 15px;">Click an item to view specifications.</p>
+          </div>
+        </div>
+        <div id="image-gallery-container" class="gallery">
+          <div class="loader"></div>
+        </div>
+      </section>
+
+      <!-- PRODUCT DETAIL PAGE SECTION -->
+      <section id="productdetailpage" class="page" aria-labelledby="detail-title">
+        <button class="btn-back" onclick="showPage('catalogpage')">&larr; Return to Collection</button>
+        <div class="product-layout">
+          <div class="product-image-container">
+            <img id="detail-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 4'%3E%3C/svg%3E" alt="Product Specification View" loading="lazy" width="600" height="800" />
+          </div>
+          <div class="product-specs">
+            <h1 id="detail-title">ARTICLE NAME</h1>
+            <div class="spec-row">
+              <span class="label">Fabric Options:</span>
+              <span class="value">Please visit the available fabrics section. Also we can source from your trusted supplier too!</span>
+            </div>
+            <div class="spec-desc">
+              <strong>Please <a href="#fabricspage" onclick="showPage('fabricspage'); return false;" style="color: var(--secondary); text-decoration: underline; text-underline-offset: 4px;">click here</a> to see available fabrics.</strong><br /><br />
+              DTF, DTG, Sublimation, Embroidery are available.
+            </div>
+            <a id="detail-mail-btn" href="mailto:info@sabritrader.com" class="btn-main" style="width: 100%; text-align: center; margin-top: 40px;">REQUEST QUOTE FOR THIS ARTICLE</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // 1. PAGE ROUTER
+      function showPage(pageId) {
+        document.querySelectorAll(".page").forEach((page) => page.classList.remove("active"));
+        const targetPage = document.getElementById(pageId);
+        if (targetPage) targetPage.classList.add("active");
+
+        document.querySelectorAll(".nav-links a").forEach((link) => link.classList.remove("active-link"));
+        const activeNav = document.getElementById("nav-" + pageId);
+        if (activeNav) activeNav.classList.add("active-link");
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // 2. HELPER UTILITY FOR TEXT FORMATTING
+      function formatProductName(filename) {
+        return filename
+          .replace(/\.[^/.]+$/, "")
+          .replace(/-/g, " ")
+          .replace(/_/g, " ");
+      }
+
+      // 3. API DYNAMIC CONTENT CONTROLLER
+      async function openCategory(categoryName) {
+        showPage("catalogpage");
+        const container = document.getElementById("image-gallery-container");
+        container.innerHTML = '<div class="loader"></div>';
+
+        document.getElementById("catalog-h1").innerText = categoryName
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (l) => l.toUpperCase());
+
+        try {
+          const response = await fetch(`/api/products/${categoryName}`);
+          if (!response.ok) {
+            const errData = await response.json().catch(() => ({}));
+            throw new Error(errData.error || `HTTP ${response.status}`);
+          }
+          const imageFiles = await response.json();
+          container.innerHTML = "";
+
+          if (imageFiles.length === 0) {
+            container.innerHTML = `<p style="color: var(--text-dim); grid-column: 1/-1; text-align: center; font-size: 18px;">No images found in this folder.</p>`;
             return;
+          }
+
+          imageFiles.forEach((filename) => {
+            const cleanName = formatProductName(filename);
+            const imgPath = `/products/${categoryName}/${filename}`;
+            const box = document.createElement("div");
+            box.className = "product-item-box";
+            box.onclick = () => showProductDetail(cleanName, imgPath);
+            box.innerHTML = `
+              <img src="${imgPath}" alt="${cleanName}" loading="lazy" onerror="this.parentElement.style.display='none'" />
+              <div class="product-label">${cleanName}</div>
+            `;
+            container.appendChild(box);
+          });
+        } catch (error) {
+          console.error("Connection Error Details:", error);
+          container.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 40px; background: rgba(255,0,51,0.05); border-radius: 24px; border: 1px solid rgba(255,0,51,0.2);">
+              <h3 style="color: var(--primary); font-size: 22px; margin-bottom: 15px;">Connection Failed</h3>
+              <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto; font-size: 16px;">
+                <strong>Reason:</strong> ${error.message}<br><br>
+                Make sure your Node.js server is running and your folder structure matches the code.
+              </p>
+            </div>`;
         }
+      }
 
-        // Render every single image instantly, zero guessing
-        data.files.forEach((fileName, index) => {
-            const imgPath = `products/${categoryName}/${fileName}`;
-            const cleanName = fileName.replace(/\.[^/.]+$/, ""); // Removes .jpg/.png for the label
-            
-            const itemBox = document.createElement('div');
-            itemBox.className = 'product-item-box';
-            itemBox.style.animationDelay = `${index * 0.05}s`; // Creates a cascading load effect
-            itemBox.onclick = () => openProductDetail(imgPath, cleanName);
-            
-            const finalImg = document.createElement('img');
-            finalImg.src = imgPath;
-            finalImg.setAttribute('loading', 'lazy');
-            finalImg.alt = `Sabri Trader Premium Sportswear: ${cleanName}`;
-            
-            const textLabel = document.createElement('p');
-            textLabel.className = 'product-label';
-            textLabel.innerText = cleanName;
-            
-            itemBox.appendChild(finalImg);
-            itemBox.appendChild(textLabel);
-            gallery.appendChild(itemBox);
-
-            setTimeout(() => { scrollObserver.observe(itemBox); }, 10);
-        });
-
-    } catch (error) {
-        console.error("Factory Database Error:", error);
-        gallery.innerHTML = `
-        <div style="grid-column: 1 / -1; padding: 40px; background: rgba(255,0,51,0.1); border: 1px solid var(--primary); border-radius: 20px; text-align: center;">
-            <h3 style="color: white; margin-bottom: 10px; font-weight: 900; letter-spacing: 2px;">🚨 SERVER DISCONNECTED 🚨</h3>
-            <p style="color: var(--text-dim); font-size: 18px;">Please ensure your Node.js backend (server.js) is currently running in your terminal.</p>
-        </div>`;
-    }
-}
-</script>
-</body>
+      // 4. DETAIL PAGE DATA BINDING
+      function showProductDetail(name, imgPath) {
+        showPage("productdetailpage");
+        document.getElementById("detail-title").innerText = name;
+        const imgElement = document.getElementById("detail-image");
+        imgElement.src = imgPath;
+        imgElement.alt = name;
+        document.getElementById("detail-mail-btn").href =
+          `mailto:info@sabritrader.com?subject=Quote%20Request%3A%20${encodeURIComponent(name)}`;
+      }
+    </script>
+  </body>
 </html>
