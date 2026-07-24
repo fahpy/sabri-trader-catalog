@@ -809,6 +809,142 @@
         background: var(--color-black);
         flex-shrink: 0;
       }
+
+      /* Reusable eyebrow + stitch rule, so every section header can carry
+         the same tech-pack label treatment the hero uses */
+      .section-eyebrow {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-gray-500);
+        margin-bottom: 10px;
+        display: block;
+      }
+      .section-header .stitch-rule {
+        max-width: 220px;
+        margin-bottom: 16px;
+      }
+
+      /* ==========================================
+         13. CAPABILITY BAND (homepage, factory-at-a-glance)
+         ========================================== */
+      .capability-band {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        border: 1px solid var(--color-gray-200);
+        margin-bottom: 40px;
+      }
+      .capability-item {
+        padding: 24px clamp(18px, 2.5vw, 28px);
+        border-right: 1px solid var(--color-gray-200);
+        border-bottom: 1px solid var(--color-gray-200);
+      }
+      .capability-item:last-child { border-right: none; }
+      .capability-item .capability-figure {
+        font-family: var(--font-display);
+        font-size: clamp(1.7rem, 2.4vw, 2.2rem);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .capability-item .capability-label {
+        font-size: 0.78rem;
+        color: var(--color-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+      }
+      @media (max-width: 700px) {
+        .capability-item { border-right: none; }
+      }
+
+      /* ==========================================
+         14. NUMBERED PROCESS STEPS
+         Used only where content is a genuine ordered sequence
+         (QC checkpoints, onboarding steps) — not decorative.
+         ========================================== */
+      .step-badge {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--color-white);
+        background: var(--color-black);
+        width: 26px;
+        height: 26px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+        flex-shrink: 0;
+      }
+
+      /* ==========================================
+         15. FAQ ACCORDION — native <details>, no JS required
+         ========================================== */
+      .faq-list {
+        border-top: 1px solid var(--color-gray-200);
+      }
+      .faq-item {
+        border-bottom: 1px solid var(--color-gray-200);
+      }
+      .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 20px 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        font-weight: 800;
+        font-size: 0.98rem;
+      }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after {
+        content: "+";
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+      }
+      .faq-item[open] summary::after { transform: rotate(45deg); }
+      .faq-item .faq-answer {
+        padding: 0 4px 22px;
+        max-width: 800px;
+        color: var(--color-gray-800);
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+      .faq-note {
+        font-size: 0.8rem;
+        color: var(--color-gray-500);
+        margin-top: 18px;
+        font-style: italic;
+      }
+
+      /* ==========================================
+         16. FOOTER BOTTOM BAR
+         ========================================== */
+      .footer-bottom {
+        max-width: var(--max-width-container);
+        margin: 50px auto 0;
+        padding-top: 24px;
+        border-top: 1px solid #333;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        color: var(--color-gray-500);
+      }
+      .footer-bottom a { color: var(--color-gray-500); }
+      .footer-bottom a:hover { color: var(--color-white); }
+
+      /* Slightly livelier card hover now that there's more to hover over */
+      .card-item, .info-card {
+        transform: translateY(0);
+      }
+      .card-item:hover { transform: translateY(-3px); }
     </style>
   </head>
   <body>
@@ -863,13 +999,37 @@
           </div>
           <a href="#products" class="btn-primary">Browse Product Lines</a>
         </div>
+
+        <div class="capability-band" role="group" aria-label="Factory capabilities at a glance">
+          <div class="capability-item">
+            <div class="capability-figure">07</div>
+            <div class="capability-label">Product Lines In Active Production</div>
+          </div>
+          <div class="capability-item">
+            <div class="capability-figure">03</div>
+            <div class="capability-label">In-House Decoration Methods —<br>Sublimation, Embroidery, Screen Print</div>
+          </div>
+          <div class="capability-item">
+            <div class="capability-figure">01</div>
+            <div class="capability-label">Factory Floor, Start To Finish —<br>No Subcontracted Cutting Or Sewing</div>
+          </div>
+          <div class="capability-item">
+            <div class="capability-figure">100%</div>
+            <div class="capability-label">Orders Cut &amp; Sewn To Your Tech Pack, Not A House Block</div>
+          </div>
+        </div>
+
+        <p class="text-muted-sm" style="margin-bottom: 60px; max-width: 780px;">
+          Sialkot has been the working center of the world's sports-goods industry for well over a century — the machinists, pattern cutters, and stitching lines here grew up inside this trade. Sabri Trader draws on that base of hands-on skill and puts it directly behind your order, without a trading middleman marking up the invoice or diluting the spec along the way.
+        </p>
       </section>
 
       <!-- 2. PRODUCTS PAGE -->
       <section id="products" class="page-section" aria-labelledby="products-title">
         <div class="section-header">
+          <span class="section-eyebrow">Catalog — Updated From The Factory Floor</span>
           <h2 id="products-title" class="section-title">Product Categories</h2>
-          <p class="section-subtitle">Seven product lines, one factory floor. Pick a category to see current styles, construction, and fabric options.</p>
+          <p class="section-subtitle">Seven product lines, one factory floor. Pick a category to see current styles, construction, and fabric options. Every line below ships in your sizing, your colorway, and your labeling — nothing here is sold as a stock house brand.</p>
         </div>
         <div class="cards-grid">
           <div class="card-item">
@@ -878,7 +1038,7 @@
               <h3>American Football</h3>
               <p class="text-muted-sm">Pro-cut jerseys, padded game pants, and practice apparel, reinforced at every seam that takes a hit.</p>
             </div>
-            <button class="btn-secondary" onclick="openCategory('american-foot-ball-uniform')">View Collection</button>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('american-foot-ball-uniform')">View Collection</button>
           </div>
           <div class="card-item">
             <div>
@@ -886,7 +1046,7 @@
               <h3>Baseball Garments</h3>
               <p class="text-muted-sm">Traditional button-front jerseys, pinstripe knits, and moisture-wicking pants cut to a true baseball silhouette.</p>
             </div>
-            <button class="btn-secondary" onclick="openCategory('baseball-garments')">View Collection</button>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('baseball-garments')">View Collection</button>
           </div>
           <div class="card-item">
             <div>
@@ -894,7 +1054,7 @@
               <h3>Basketball Garments</h3>
               <p class="text-muted-sm">High-airflow mesh jerseys and engineered game shorts, cut for full range of motion and edge-to-edge graphics.</p>
             </div>
-            <button class="btn-secondary" onclick="openCategory('basketball-garments')">View Collection</button>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('basketball-garments')">View Collection</button>
           </div>
           <div class="card-item">
             <div>
@@ -902,7 +1062,7 @@
               <h3>Fast Pitch</h3>
               <p class="text-muted-sm">Ergonomic cuts built for agility on the diamond, with moisture management that holds up across a full tournament day.</p>
             </div>
-            <button class="btn-secondary" onclick="openCategory('fast-pitch-garments')">View Collection</button>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('fast-pitch-garments')">View Collection</button>
           </div>
           <div class="card-item">
             <div>
@@ -910,7 +1070,7 @@
               <h3>Tactical / Our Force</h3>
               <p class="text-muted-sm">Heavy-duty uniforms and utility apparel reinforced at stress points, for teams that need gear to outlast the job.</p>
             </div>
-            <button class="btn-secondary" onclick="openCategory('our-force-garments')">View Collection</button>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('our-force-garments')">View Collection</button>
           </div>
           <div class="card-item">
             <div>
@@ -918,7 +1078,7 @@
               <h3>Softball Line</h3>
               <p class="text-muted-sm">Full sublimated softball uniforms built to hold their color and shape across a multi-season schedule.</p>
             </div>
-            <button class="btn-secondary" onclick="openCategory('soft-ball-garments')">View Collection</button>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('soft-ball-garments')">View Collection</button>
           </div>
           <div class="card-item">
             <div>
@@ -926,7 +1086,26 @@
               <h3>Women's Softball</h3>
               <p class="text-muted-sm">The same construction standards, tailored to a women's fit — built for movement, not resized from the men's block.</p>
             </div>
-            <button class="btn-secondary" onclick="openCategory('women-softball-garments')">View Collection</button>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('women-softball-garments')">View Collection</button>
+          </div>
+        </div>
+
+        <div class="info-grid mt-lg">
+          <div class="info-card">
+            <h4>Sizing &amp; Grading</h4>
+            <p>We grade every pattern against your size chart, not a generic Asian or US block. Send a fit sample or measurement spec and we'll match it before bulk cutting begins.</p>
+          </div>
+          <div class="info-card">
+            <h4>Labeling &amp; Packaging</h4>
+            <p>Woven main labels, printed care labels, hangtags, and polybag or box packing built to your brand guidelines — your name goes on it, not ours.</p>
+          </div>
+          <div class="info-card">
+            <h4>Color &amp; Print Matching</h4>
+            <p>Pantone-matched dye lots and sublimation prints checked against your artwork file before mass production, so bulk colorways match your approved sample.</p>
+          </div>
+          <div class="info-card">
+            <h4>Mixed-Category Orders</h4>
+            <p>Running a club or distributor account across several sports? We consolidate multi-category orders into a single production and shipping schedule.</p>
           </div>
         </div>
       </section>
@@ -934,8 +1113,9 @@
       <!-- 3. FABRICS PAGE -->
       <section id="fabrics" class="page-section" aria-labelledby="fabrics-title">
         <div class="section-header">
+          <span class="section-eyebrow">Materials — Sourced &amp; Tested Before Cutting</span>
           <h2 id="fabrics-title" class="section-title">Raw Material Specifications</h2>
-          <p class="section-subtitle">Every style on this site is built from one of the fabrics below. Tell us your climate, budget, and use case, and we'll recommend the composition and weight to match.</p>
+          <p class="section-subtitle">Every style on this site is built from one of the fabrics below. Weight, stretch, and finish all change how a garment performs under a full season of wear — tell us your climate, budget, and use case, and we'll recommend the composition and weight to match, or develop a custom blend for your program.</p>
         </div>
 
         <div class="table-block">
@@ -984,6 +1164,9 @@
               </tbody>
             </table>
           </div>
+          <p class="text-muted-sm mt-lg" style="max-width: 780px;">
+            Knits make up the bulk of what leaves our floor — jerseys, hoodies, and base layers all start here. Cotton-poly blends hold shape and take embroidery cleanly, while the poly-spandex line is what we reach for whenever a garment needs to stretch and recover through a full game rather than just look athletic on a hanger.
+          </p>
         </div>
 
         <div class="table-block">
@@ -1020,17 +1203,69 @@
               </tbody>
             </table>
           </div>
+          <p class="text-muted-sm mt-lg" style="max-width: 780px;">
+            Wovens do the structural work — waistbands, shells, and anything that needs to hold a cut rather than stretch with the body. Every roll is checked for weight and colorfastness before it reaches the cutting table, so a reorder six months out still matches the first shipment.
+          </p>
+        </div>
+
+        <div class="table-block">
+          <h3>Trims, Hardware &amp; Labeling</h3>
+          <div class="table-responsive">
+            <table class="spec-table">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Standard Options</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Zippers</strong></td>
+                  <td>YKK &amp; Standard-Grade, #3 – #8 Gauge</td>
+                  <td>Matched or contrast tape, two-way available on jackets</td>
+                </tr>
+                <tr>
+                  <td><strong>Elastic &amp; Drawcords</strong></td>
+                  <td>Knit &amp; Woven Waistband Elastic, Flat Drawcord</td>
+                  <td>Width and recovery set per garment, not a single house stock</td>
+                </tr>
+                <tr>
+                  <td><strong>Labels</strong></td>
+                  <td>Woven Main Labels, Printed Care Labels, Heat-Transfer</td>
+                  <td>Your brand name and care instructions, not a factory label</td>
+                </tr>
+                <tr>
+                  <td><strong>Hangtags &amp; Packaging</strong></td>
+                  <td>Custom Hangtags, Polybags, Branded Cartons</td>
+                  <td>Retail-ready or bulk-fold, built to your presentation spec</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel mt-lg">
+          <h3 class="panel-title">Developing A Custom Fabric</h3>
+          <p style="font-size: 0.9rem; color: var(--color-gray-800); line-height: 1.6;">
+            None of the above the right match? We source and test custom knit and woven blends against your target weight, stretch, and hand-feel before committing to a bulk fabric run. Send a swatch, a competitor garment, or just a description of how it needs to perform, and our team will come back with composition options and current lead times.
+          </p>
         </div>
       </section>
 
       <!-- 4. ABOUT US PAGE -->
       <section id="about" class="page-section" aria-labelledby="about-title">
         <div class="section-header">
+          <span class="section-eyebrow">Sialkot, Punjab — On The Factory Floor</span>
           <h2 id="about-title" class="section-title">Factory Infrastructure</h2>
           <p class="section-subtitle">
             Sialkot, Pakistan is one of the world's major sports-goods manufacturing hubs, and Sabri Trader runs full supply-chain integration here — from pattern to export packaging, under one roof.
           </p>
         </div>
+
+        <p style="font-size: 0.98rem; line-height: 1.7; color: var(--color-gray-800); max-width: 820px; margin-bottom: 40px;">
+          Most overseas buyers dealing with Pakistani sportswear never see a factory at all — they deal with a trading office that quotes a price, then places the actual order with whichever workshop is free that month. Sabri Trader was built the other way around: production stays on our own cutting and stitching lines, so the person who quotes your order is the same operation that's accountable for it landing on time, in spec, and in the sizing you approved.
+        </p>
 
         <div class="info-grid">
           <div class="info-card">
@@ -1051,6 +1286,33 @@
           </div>
         </div>
 
+        <div class="section-header mt-lg">
+          <h3 class="section-title" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">How We Hold Quality</h3>
+          <p class="section-subtitle">Four checkpoints, every order, before anything reaches export packing.</p>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="step-badge">01</span>
+            <h4>Fabric Inspection</h4>
+            <p>Incoming rolls are checked for weight, width, and colorfastness before a single piece is cut.</p>
+          </div>
+          <div class="info-card">
+            <span class="step-badge">02</span>
+            <h4>Pre-Production Sample</h4>
+            <p>A physical sample goes out for your written approval before we cut fabric for the bulk run.</p>
+          </div>
+          <div class="info-card">
+            <span class="step-badge">03</span>
+            <h4>In-Line Checks</h4>
+            <p>Stitching, print placement, and measurements are spot-checked continuously as the run moves through the line.</p>
+          </div>
+          <div class="info-card">
+            <span class="step-badge">04</span>
+            <h4>Final Inspection</h4>
+            <p>A finished-goods audit against your tech pack and AQL standard before cartons are sealed for export.</p>
+          </div>
+        </div>
+
         <div class="panel mt-lg">
           <h3 class="panel-title">Executive Leadership</h3>
           <p style="font-size: 0.95rem;"><strong>Rana Faheem — CEO:</strong> Oversees global business development, client relations, and factory operational compliance to guarantee seamless export execution.</p>
@@ -1060,36 +1322,73 @@
       <!-- 5. PARTNERSHIP PAGE -->
       <section id="partnership" class="page-section" aria-labelledby="partnership-title">
         <div class="section-header">
+          <span class="section-eyebrow">Working Directly With Our Floor</span>
           <h2 id="partnership-title" class="section-title">B2B Manufacturing Program</h2>
-          <p class="section-subtitle">Partner directly with our manufacturing floor for OEM, private-label, and bulk distributor accounts.</p>
+          <p class="section-subtitle">Partner directly with our manufacturing floor for OEM, private-label, and bulk distributor accounts. No trading agent in between — you deal with the people cutting and sewing the order.</p>
         </div>
 
         <div class="info-grid">
           <div class="info-card">
-            <h4>1. Tech Pack &amp; Design Review</h4>
+            <span class="step-badge">01</span>
+            <h4>Tech Pack &amp; Design Review</h4>
             <p>Send your CAD designs or tech packs. Our team reviews seam structure, fabric spec, and print placement before anything is cut.</p>
           </div>
           <div class="info-card">
-            <h4>2. Rapid Prototyping</h4>
+            <span class="step-badge">02</span>
+            <h4>Rapid Prototyping</h4>
             <p>We cut and sew physical samples and send them by express courier, so you can evaluate the real thing before committing to a full run.</p>
           </div>
           <div class="info-card">
-            <h4>3. Mass Production &amp; Logistics</h4>
+            <span class="step-badge">03</span>
+            <h4>Mass Production &amp; Logistics</h4>
             <p>Bulk production runs with continuous inline quality checks, packed to export standard, and routed by air or sea freight.</p>
           </div>
         </div>
 
-        <div class="cta-row mt-lg">
+        <div class="cta-row mt-lg" style="margin-bottom: 50px;">
           <a href="#contact" class="btn-primary">Start An Inquiry</a>
           <a href="mailto:b2bsabritrader@outlook.com" class="link-underline">Direct Factory Email &rarr;</a>
         </div>
+
+        <div class="section-header">
+          <h3 class="section-title" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">Common Questions</h3>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What's the minimum order quantity?</summary>
+            <p class="faq-answer">MOQ depends on the garment type, fabric, and how much customization is involved — a simple single-color tee runs differently than a fully sublimated, multi-panel jersey. Send your spec through the contact form and we'll quote a minimum against that exact order, not a generic factory floor.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long does sampling and production take?</summary>
+            <p class="faq-answer">Pre-production samples typically ship within days of a confirmed tech pack and fabric selection; bulk production timelines depend on order volume and current factory load. We'll give you a firm date range once your spec and quantity are confirmed, and hold to it.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you offer private labeling?</summary>
+            <p class="faq-answer">Yes. Your woven labels, care labels, hangtags, and packaging go on the garment — nothing ships under the Sabri Trader name unless you ask for it to.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are your payment terms?</summary>
+            <p class="faq-answer">Standard terms are a deposit to confirm production with the balance due before shipment, though this can flex for repeat accounts. We'll lay out exact terms in your quote so there's nothing to guess at.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which countries do you ship to?</summary>
+            <p class="faq-answer">We regularly route air and sea freight to the EU, UK, US, and APAC, packed and documented to commercial import standard. If you're outside those regions, ask — we can usually still route it.</p>
+          </details>
+        </div>
+        <p class="faq-note">Figures above are typical ranges. Every quote is confirmed in writing against your specific order before production starts.</p>
       </section>
 
       <!-- 6. CONTACT PAGE -->
       <section id="contact" class="page-section" aria-labelledby="contact-title">
         <div class="section-header">
+          <span class="section-eyebrow">RFQ &amp; General Inquiries</span>
           <h2 id="contact-title" class="section-title">Contact B2B Sales</h2>
           <p class="section-subtitle">Submit your order details or RFQ below. Our sales engineering team responds within 24 hours.</p>
+        </div>
+
+        <div class="panel mt-lg" style="max-width: 800px;">
+          <h3 class="panel-title">Get A Faster, More Accurate Quote</h3>
+          <p class="text-muted-sm">The more of this you can include up front, the fewer back-and-forth emails it takes to get you a real number: product category and rough quantity, target fabric or performance need, whether you need private labeling, and your target ship-by date. No tech pack yet? Send what you have — sketches, a reference garment, or just a description — and we'll help shape the spec from there.</p>
         </div>
 
         <div class="form-container">
@@ -1180,10 +1479,22 @@
         <div class="footer-col">
           <h4>Product Lines</h4>
           <ul>
-            <li><a href="#products">American Football</a></li>
-            <li><a href="#products">Baseball Gear</a></li>
-            <li><a href="#products">Basketball Uniforms</a></li>
-            <li><a href="#products">Softball Apparel</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('american-foot-ball-uniform')">American Football</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('baseball-garments')">Baseball Garments</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('basketball-garments')">Basketball Garments</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('fast-pitch-garments')">Fast Pitch</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('our-force-garments')">Tactical / Our Force</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('soft-ball-garments')">Softball Line</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('women-softball-garments')">Women's Softball</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Capabilities</h4>
+          <ul>
+            <li><a href="#fabrics">Fabric &amp; Trim Specs</a></li>
+            <li><a href="#about">Quality Control Process</a></li>
+            <li><a href="#partnership">Private Labeling</a></li>
+            <li><a href="#partnership">Sampling &amp; Prototyping</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1203,6 +1514,10 @@
           <p>Email: <a href="mailto:b2bsabritrader@outlook.com">b2bsabritrader@outlook.com</a></p>
           <p>WhatsApp: <a href="https://wa.me/923301074868" target="_blank" rel="noopener">+92 330 1074868</a></p>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year">2026</span> Sabri Trader. All rights reserved.</span>
+        <span>Factory-direct OEM manufacturing, Sialkot, Pakistan.</span>
       </div>
     </footer>
 
@@ -1247,6 +1562,10 @@
 
       window.addEventListener('hashchange', handleRoute);
       window.addEventListener('DOMContentLoaded', handleRoute);
+
+      // Keep the footer copyright year current without a manual edit each January
+      const footerYearEl = document.getElementById('footer-year');
+      if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
 
       // Mobile Navigation Handler
       const menuToggle = document.getElementById('menu-toggle');
