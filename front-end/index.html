@@ -95,6 +95,9 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
       /* Minimal Scrollbar */
@@ -111,10 +114,13 @@
         background: var(--core-black);
       }
 
+      /* Full Width Container */
       .container {
-        max-width: 1200px;
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 40px clamp(15px, 4vw, 40px);
+        padding: 40px clamp(20px, 4vw, 60px);
+        flex: 1;
       }
 
       /* ==========================================
@@ -131,7 +137,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 clamp(15px, 4vw, 40px);
+        padding: 0 clamp(20px, 4vw, 60px);
         height: 60px;
         transition: transform 0.3s ease;
       }
@@ -221,7 +227,7 @@
         font-size: clamp(1rem, 1.8vw, 1.2rem);
         color: var(--core-black);
         margin: 0 0 40px 0;
-        max-width: 600px;
+        max-width: 800px;
         line-height: 1.6;
       }
 
@@ -329,13 +335,15 @@
         color: var(--grey-dark);
         margin-bottom: 40px;
         font-size: 1rem;
-        max-width: 600px;
+        max-width: 100%;
+        text-align: left;
       }
       
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 20px;
+        width: 100%;
       }
       
       .card {
@@ -360,7 +368,7 @@
 
       .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 2px;
         background: var(--ui-border);
         border: 1px solid var(--ui-border);
@@ -402,6 +410,7 @@
          ========================================== */
       .fabric-section {
         margin-bottom: 60px;
+        width: 100%;
       }
       .fabric-section h3 {
         font-size: 20px;
@@ -410,6 +419,7 @@
         margin-bottom: 20px;
         border-bottom: 2px solid var(--core-black);
         padding-bottom: 10px;
+        text-align: left;
       }
       .fabric-wrapper {
         width: 100%;
@@ -433,6 +443,7 @@
         padding: 20px 10px;
         font-size: 14px;
         border-bottom: 1px solid var(--ui-border);
+        text-align: left;
       }
       .fabric-table tr:hover td {
         background: var(--grey-light);
@@ -446,19 +457,84 @@
       }
 
       /* ==========================================
-         8. PRODUCT DETAILS & ABOUT
+         8. ABOUT US LAYOUT IMPROVEMENTS
          ========================================== */
-      .product-layout, .about-grid {
+      .about-header-text {
+        max-width: 800px;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+      
+      .about-features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+        width: 100%;
+      }
+      
+      .about-feature-box {
+        background: var(--grey-light);
+        padding: 30px;
+        border-top: 4px solid var(--core-black);
+      }
+      
+      .about-feature-box h4 {
+        margin: 0 0 15px 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+      
+      .about-feature-box p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--core-black);
+      }
+
+      .factory-profile h3 {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin-bottom: 15px;
+        margin-top: 40px;
+        text-align: left;
+        border-bottom: 2px solid var(--core-black);
+        padding-bottom: 10px;
+      }
+      .factory-profile p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .factory-profile strong {
+        font-weight: 900;
+      }
+
+      /* ==========================================
+         9. PRODUCT DETAILS & PARTNERSHIP
+         ========================================== */
+      .product-layout {
         display: grid;
         grid-template-columns: 1fr;
         gap: 40px;
         margin-top: 20px;
       }
       @media (min-width: 992px) {
-        .product-layout, .about-grid {
+        .product-layout {
           grid-template-columns: 1fr 1fr;
           gap: 60px;
         }
+      }
+      
+      .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 20px;
+        width: 100%;
       }
       
       .product-image-container img {
@@ -467,9 +543,12 @@
         background: var(--grey-light);
       }
       
-      .product-specs, .factory-profile {
+      .product-specs {
         padding: 0;
+        width: 100%;
+        text-align: left;
       }
+      
       .product-specs h1 {
         font-size: clamp(2rem, 3vw, 3rem);
         text-transform: uppercase;
@@ -513,17 +592,6 @@
         font-weight: 700;
       }
 
-      .factory-profile p {
-        font-size: 16px;
-        color: var(--core-black);
-        margin-top: 0;
-        margin-bottom: 20px;
-        line-height: 1.6;
-      }
-      .factory-profile strong {
-        font-weight: 900;
-      }
-
       .spec-bar {
         display: flex;
         gap: 40px;
@@ -531,6 +599,8 @@
         padding-top: 25px;
         margin-top: 40px;
         flex-wrap: wrap;
+        width: 100%;
+        text-align: left;
       }
       .spec-item h2 {
         margin: 0 0 5px 0;
@@ -553,13 +623,14 @@
       }
 
       /* ==========================================
-         9. CONTACT FORM
+         10. CONTACT FORM
          ========================================== */
       .contact-form-container {
         background: var(--grey-light);
         padding: clamp(30px, 5vw, 60px);
-        max-width: 800px;
+        max-width: 100%;
         margin: 40px 0 0 0;
+        text-align: left;
       }
       .form-group {
         margin-bottom: 25px;
@@ -603,7 +674,7 @@
       }
 
       /* ==========================================
-         10. LOADERS & MOBILE ADJUSTMENTS
+         11. LOADERS & MOBILE ADJUSTMENTS
          ========================================== */
       .loader {
         width: 40px;
@@ -644,6 +715,56 @@
           right: 20px;
         }
       }
+
+      /* ==========================================
+         12. FOOTER
+         ========================================== */
+      .site-footer {
+        background: var(--core-black);
+        color: var(--core-white);
+        padding: 60px clamp(20px, 4vw, 60px);
+        margin-top: 60px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: left;
+      }
+      .footer-col h4 {
+        margin: 0 0 20px 0;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-col ul li {
+        margin-bottom: 12px;
+      }
+      .footer-col ul li a,
+      .footer-col p a {
+        color: #c8cbcc;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+      .footer-col p {
+        font-size: 14px;
+        color: #c8cbcc;
+        margin: 0 0 10px 0;
+      }
+      .footer-col ul li a:hover,
+      .footer-col p a:hover {
+        color: var(--core-white);
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -654,7 +775,7 @@
         </a>
         <div class="nav-links">
           <a href="#homepage" id="nav-homepage" class="active-link" aria-current="page" onclick="showPage('homepage'); return false;">Home</a>
-          <a href="#productspage" id="nav-productspage" onclick="showPage('productspage'); return false;">Factory Vault</a>
+          <a href="#productspage" id="nav-productspage" onclick="showPage('productspage'); return false;">Products</a>
           <a href="#fabricspage" id="nav-fabricspage" onclick="showPage('fabricspage'); return false;">Fabrics</a>
           <a href="#aboutpage" id="nav-aboutpage" onclick="showPage('aboutpage'); return false;">About Us</a>
           <a href="#partnershippage" id="nav-partnershippage" onclick="showPage('partnershippage'); return false;">Partnership</a>
@@ -667,11 +788,9 @@
       <!-- HOMEPAGE SECTION -->
       <section id="homepage" class="page active" aria-labelledby="home-h1">
         <div class="hero">
-          <h1 id="home-h1">Engineering<br>Dominance</h1>
+          <h1 id="home-h1">Welcome to<br>Sabri Trader</h1>
           <p class="hook">
-            We don't just stitch fabrics; we engineer the unseen advantage.
-            Operating out of Sialkot, Pakistan, Sabri Trader is the silent
-            manufacturing powerhouse behind elite B2B sportswear.
+            Sabri Trader is proud to present our world-class sportswear and manufacturing brand. We prepare our products keeping in view international standards and the requirements of professionals. From selecting high-quality raw materials to final delivery, our systematic approach ensures excellence. We believe that our superior quality and dedicated services will help us build a long-term business relationship with your esteemed company, because "Quality is our Policy."
           </p>
           <div class="hero-features">
             <div class="feature">
@@ -687,13 +806,13 @@
               <p>Bespoke GSM weights, advanced sublimation, and private brand labeling.</p>
             </div>
           </div>
-          <button class="btn-main" onclick="showPage('productspage')">Access The Vault</button>
+          <button class="btn-main" onclick="showPage('productspage')">View Products</button>
         </div>
       </section>
 
       <!-- PRODUCTS LINE SECTION -->
       <section id="productspage" class="page" aria-labelledby="products-h2">
-        <h2 id="products-h2" class="section-title">Factory Lines</h2>
+        <h2 id="products-h2" class="section-title">Products</h2>
         <p class="section-subtitle">
           Select a category below to securely interface with our real-time manufacturing database.
         </p>
@@ -824,40 +943,39 @@
       <!-- ABOUT US SECTION -->
       <section id="aboutpage" class="page" aria-labelledby="about-h2">
         <h2 id="about-h2" class="section-title">About Us</h2>
-        <div class="factory-profile" style="max-width: 800px; margin-top: 40px;">
-          <p>
-            <strong>Welcome to Sabri Trader.</strong> As a premier producer
-            and exporter of B2B sportswear, teamwear, and custom athletic
-            apparel, we bring modern manufacturing precision to the world of
-            sports. Located in the manufacturing heart of Sialkot, Pakistan,
-            we bridge the gap between raw industrial capacity and premium
-            retail finishing.
-          </p>
-          <p>
-            One of our key strengths is catering to the specific needs of our
-            customers by offering <strong>low Minimum Order Quantities (MOQ)</strong>
-            for custom designs. This allows sports teams, clubs, gyms, and
-            emerging brands to have their own unique branding on jerseys,
-            shorts, gloves, and other sports accessories without having to
-            place massive wholesale orders.
-          </p>
-          <p>
-            Our manufacturing process is characterized by precision, attention
-            to detail, and the use of advanced technologies. We are not just a
-            trading house; <strong>we are the factory floor.</strong> We
-            maintain a highly skilled workforce that ensures every product is
-            meticulously crafted to meet the highest standards of quality and
-            durability.
-          </p>
-          <p>
-            Sabri Trader’s commitment to customer satisfaction goes beyond
-            just manufacturing. We strive to establish long-lasting
-            relationships with our clients globally by providing excellent
-            customer service, timely delivery, and highly competitive pricing.
-            Whether your focus is soccer, basketball, cricket, or any other
-            discipline, we are well-equipped to meet your unique requirements
-            and exceed your expectations.
-          </p>
+        <p class="about-header-text">
+          Sabri Trader is a premier producer and exporter operating from the manufacturing heart of Sialkot, Pakistan. We don’t just make garments — we build brands. We are not just a trading house; <strong>we are the factory floor.</strong>
+        </p>
+
+        <div class="factory-profile">
+          <h3>Why Partner With Sabri Trader?</h3>
+          <div class="about-features-grid">
+            <div class="about-feature-box">
+              <h4>Low Minimums (MOQ)</h4>
+              <p>We cater to the specific needs of our customers by offering flexible, low Minimum Order Quantities for custom designs. This allows sports teams, clubs, gyms, and emerging brands to have their own unique branding without massive wholesale commitments.</p>
+            </div>
+            
+            <div class="about-feature-box">
+              <h4>End-to-End Service</h4>
+              <p>From selecting high-quality raw materials to precision stitching, private label finishing, and final delivery, our systematic approach ensures excellence. We bridge the gap between raw industrial capacity and premium retail finishing.</p>
+            </div>
+            
+            <div class="about-feature-box">
+              <h4>Quality Assurance</h4>
+              <p>Our manufacturing process is characterized by precision and attention to detail. Every product is meticulously crafted to meet the highest standards of quality and durability. Because "Quality is our Policy," we ensure export-grade stitching and heavy-duty fabric architecture.</p>
+            </div>
+            
+            <div class="about-feature-box">
+              <h4>Ethical Standards</h4>
+              <p>We prepare our products keeping in view international standards and the requirements of professionals. We are fully committed to responsible and ethical manufacturing practices across our entire supply chain.</p>
+            </div>
+          </div>
+
+          <h3>A Fully Certified & Export-Ready Manufacturer</h3>
+          <p>We are well-equipped to meet your unique requirements and exceed your expectations, offering excellent customer service, highly competitive pricing, and timely delivery. We operate as a dedicated manufacturing partner for activewear startups, fitness studios, and professional teams across all disciplines including soccer, basketball, and cricket. Whether your focus is on a small custom batch or high-volume wholesale distribution, you receive the same dedicated focus.</p>
+
+          <h3>Meet the Leadership</h3>
+          <p><strong>Rana Faheem — CEO:</strong> Leading Sabri Trader’s global operations, Rana Faheem ensures that what’s promised to clients is what gets delivered. Under his guidance, Sabri Trader strives to establish long-lasting business relationships with esteemed companies globally.</p>
         </div>
       </section>
 
@@ -938,7 +1056,7 @@
 
       <!-- CATALOG PAGE SECTION -->
       <section id="catalogpage" class="page" aria-labelledby="catalog-h1">
-        <button class="btn-back" onclick="showPage('productspage')">&larr; Return to Vault</button>
+        <button class="btn-back" onclick="showPage('productspage')">&larr; Return to Products</button>
         <h1 id="catalog-h1" class="section-title">Collection</h1>
         
         <div id="image-gallery-container" class="gallery" style="margin-top: 40px;">
@@ -968,6 +1086,37 @@
         </div>
       </section>
     </main>
+
+    <!-- USEFUL LINKS FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#productspage" onclick="showPage('productspage'); return false;">Sports Wear</a></li>
+            <li><a href="#productspage" onclick="showPage('productspage'); return false;">Team Uniforms</a></li>
+            <li><a href="#productspage" onclick="showPage('productspage'); return false;">Fitness Wear</a></li>
+            <li><a href="#productspage" onclick="showPage('productspage'); return false;">Casual Wear</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#homepage" onclick="showPage('homepage'); return false;">Home</a></li>
+            <li><a href="#aboutpage" onclick="showPage('aboutpage'); return false;">About Us</a></li>
+            <li><a href="#productspage" onclick="showPage('productspage'); return false;">Products</a></li>
+            <li><a href="#fabricspage" onclick="showPage('fabricspage'); return false;">Fabric Range</a></li>
+            <li><a href="#contactpage" onclick="showPage('contactpage'); return false;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Sialkot, Punjab, Pakistan</p>
+          <p>Email: <a href="mailto:b2bsabritrader@outlook.com">b2bsabritrader@outlook.com</a></p>
+          <p>WhatsApp: <a href="https://wa.me/923301074868" target="_blank">+92 330 1074868</a></p>
+        </div>
+      </div>
+    </footer>
 
     <script>
       // 1. PAGE ROUTER
