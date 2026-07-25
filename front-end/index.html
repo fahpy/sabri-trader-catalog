@@ -88,6 +88,7 @@
         --max-width-container: 1800px;
         --nav-height: 70px;
         --side-pad: clamp(20px, 4vw, 60px);
+        --prose-width: 66ch;
       }
 
       *, *::before, *::after {
@@ -313,7 +314,7 @@
       .hero p.lead {
         font-size: clamp(1.05rem, 1.5vw, 1.25rem);
         color: var(--color-gray-800);
-        max-width: 900px;
+        max-width: var(--prose-width);
         line-height: 1.6;
         margin-bottom: 40px;
       }
@@ -418,8 +419,26 @@
         color: var(--color-gray-500);
         font-size: 1rem;
         margin-top: 8px;
-        max-width: 800px;
+        max-width: var(--prose-width);
       }
+      /* Modifier for smaller in-page sub-headers (e.g. "Common Questions"),
+         so pages don't need repeated inline font-size declarations */
+      .section-title-sm {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+      }
+
+      /* Reusable group divider for splitting one page into labeled
+         sub-catalogs — same uppercase + rule treatment as the fabric
+         tables, so the pattern reads as one consistent system site-wide */
+      .group-title {
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--color-black);
+        margin: 48px 0 20px;
+      }
+      .group-title.first { margin-top: 0; }
 
       /* Card Grid Layouts */
       .cards-grid {
@@ -566,6 +585,7 @@
         color: var(--color-gray-500);
         line-height: 1.5;
       }
+      .prose { max-width: var(--prose-width); }
       .panel {
         background: var(--color-gray-100);
         border: 1px solid var(--color-gray-200);
@@ -576,6 +596,11 @@
         font-weight: 900;
         margin-bottom: 8px;
         font-size: 1rem;
+      }
+      .panel p {
+        font-size: 0.9rem;
+        color: var(--color-gray-800);
+        line-height: 1.6;
       }
       .mt-lg { margin-top: 40px; }
       .cta-row {
@@ -910,7 +935,7 @@
       .faq-item[open] summary::after { transform: rotate(45deg); }
       .faq-item .faq-answer {
         padding: 0 4px 22px;
-        max-width: 800px;
+        max-width: var(--prose-width);
         color: var(--color-gray-800);
         font-size: 0.92rem;
         line-height: 1.65;
@@ -945,6 +970,254 @@
         transform: translateY(0);
       }
       .card-item:hover { transform: translateY(-3px); }
+
+      /* ==========================================
+         17. HERO SPLIT LAYOUT + HANGTAG SPEC PANEL
+         The hero is the same physical object every buyer here already
+         handles — a factory hangtag. Right column mocks one up instead
+         of a decorative graphic, so it earns its place on the page.
+         ========================================== */
+      .hero-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+      @media (min-width: 1000px) {
+        .hero-layout { grid-template-columns: 1.15fr 0.85fr; gap: 56px; }
+      }
+
+      .hangtag {
+        background: var(--color-white);
+        border: 1px solid var(--color-black);
+        padding: 30px 26px 24px;
+        position: relative;
+        transform: rotate(1.1deg);
+        box-shadow: 7px 9px 0 var(--color-gray-200);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        max-width: 380px;
+      }
+      .hangtag:hover {
+        transform: rotate(0deg) translateY(-2px);
+        box-shadow: 10px 13px 0 var(--color-gray-200);
+      }
+      .hangtag::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--color-white);
+        border: 2px solid var(--color-black);
+        box-shadow: 0 0 0 4px var(--color-white);
+      }
+      .hangtag-eyebrow {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-gray-500);
+        text-align: center;
+        margin: 16px 0 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px dashed var(--color-gray-500);
+      }
+      .hangtag-title {
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: -0.3px;
+        margin-bottom: 16px;
+      }
+      .hangtag-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        margin-bottom: 18px;
+      }
+      .hangtag-list li {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        padding-bottom: 8px;
+        border-bottom: 1px dotted var(--color-gray-200);
+      }
+      .hangtag-list li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        flex-shrink: 0;
+        background: var(--color-black);
+        transform: translateY(-1px);
+      }
+      .hangtag-sub {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-gray-500);
+        margin-bottom: 10px;
+      }
+      .hangtag-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+      .hangtag-chips .spec-chip { margin-bottom: 0; }
+      .hangtag-footer {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        font-style: italic;
+        color: var(--color-gray-500);
+        text-align: center;
+        padding-top: 12px;
+        border-top: 1px dashed var(--color-gray-500);
+      }
+
+      /* ==========================================
+         18. SPLIT INTRO — narrative copy paired with a fact panel,
+         so page-opening text keeps a readable line length instead of
+         stretching edge-to-edge on wide screens.
+         ========================================== */
+      .split-intro {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 44px;
+        align-items: stretch;
+      }
+      @media (min-width: 960px) {
+        .split-intro { grid-template-columns: 1.3fr 0.7fr; gap: 60px; }
+      }
+      .intro-copy p {
+        font-size: 0.98rem;
+        line-height: 1.75;
+        color: var(--color-gray-800);
+        max-width: var(--prose-width);
+      }
+      .intro-copy p + p { margin-top: 16px; }
+
+      .fact-panel {
+        background: var(--color-gray-100);
+        border: 1px solid var(--color-gray-200);
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+      .fact-panel h4 {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-gray-500);
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--color-gray-200);
+      }
+      .fact-panel ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+      .fact-panel li {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: var(--color-gray-800);
+        padding-left: 14px;
+        position: relative;
+      }
+      .fact-panel li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--color-gray-500);
+      }
+      .fact-panel li strong {
+        display: block;
+        font-weight: 800;
+        color: var(--color-black);
+        margin-bottom: 2px;
+      }
+
+      /* ==========================================
+         19. FOUNDER QUOTE — a real attributed line, not a decorative
+         pull-quote; used once, on the About page.
+         ========================================== */
+      .founder-quote {
+        border-left: 3px solid var(--color-black);
+        background: var(--color-gray-100);
+        padding: 30px 30px 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+      .founder-quote p {
+        font-family: var(--font-display);
+        font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+        line-height: 1.28;
+        margin-bottom: 14px;
+      }
+      .founder-quote cite {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-gray-500);
+      }
+
+      /* ==========================================
+         20. MOBILE THUMB-ZONE CTA BAR
+         On a phone the bottom third of the screen is where a thumb
+         rests, not the top nav — so the two actions a B2B buyer
+         actually takes (message us, see the catalog) live there
+         instead of only at the top of the page.
+         ========================================== */
+      .mobile-cta-bar { display: none; }
+      @media (max-width: 850px) {
+        .mobile-cta-bar {
+          display: flex;
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 900;
+          gap: 10px;
+          background: var(--color-white);
+          border-top: 1px solid var(--color-gray-200);
+          padding: 10px var(--side-pad) calc(10px + env(safe-area-inset-bottom, 0px));
+          box-shadow: 0 -10px 24px -12px rgba(0, 0, 0, 0.18);
+        }
+        .mobile-cta-bar a {
+          flex: 1;
+          text-align: center;
+          padding: 13px 10px;
+          font-size: 0.78rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          text-decoration: none;
+          border: 1px solid var(--color-black);
+          transition: var(--transition-standard);
+        }
+        .mobile-cta-bar a.primary { background: var(--color-black); color: var(--color-white); }
+        .mobile-cta-bar a.primary:active { background: var(--color-accent-hover); }
+        .mobile-cta-bar a.secondary { background: var(--color-white); color: var(--color-black); }
+        .mobile-cta-bar a.secondary:active { background: var(--color-gray-100); }
+        body { padding-bottom: 62px; }
+      }
     </style>
   </head>
   <body>
@@ -977,37 +1250,77 @@
       <!-- 1. HOMEPAGE -->
       <section id="homepage" class="page-section active" aria-labelledby="hero-title">
         <div class="hero">
-          <span class="hero-tagline">Sialkot, Pakistan — Factory-Direct OEM Manufacturing</span>
-          <hr class="stitch-rule hero-stitch" />
-          <h1 id="hero-title">From Tech Pack To Teamwear, Off Our Own Factory Floor.</h1>
-          <p class="lead">
-            Sabri Trader manufactures custom cut-and-sew and sublimated sportswear for clubs, teamwear retailers, and wholesale distributors — no trading agent standing between your order and our production line. Send your specs, sizing, and artwork; we handle pattern making, sampling, bulk production, and export packing.
-          </p>
-          <div class="hero-grid">
-            <div class="hero-feature">
-              <h3>Built To Spec</h3>
-              <p>Every pattern graded and every seam checked against your tech pack — not a generic house template.</p>
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <span class="hero-tagline">Sialkot, Pakistan — Factory-Direct OEM Manufacturing</span>
+              <hr class="stitch-rule hero-stitch" />
+              <h1 id="hero-title">Any Sportswear. Any Spec. One Factory Floor.</h1>
+              <p class="lead">
+                Sabri Trader cuts, sews, and decorates playing kits for any sport — hockey, cricket, rugby, tennis, wrestling, boxing, polo, and beyond — alongside puffer jackets, softshell jackets, gilets, rain jackets, and casual, street, and team wear for private-label brands and wholesale distributors. If it's sportswear, outerwear, or apparel your brand can put a name on, our floor can build it, with no trading agent and no subcontracted workshop between your order and the machines. Send your tech pack, sizing, and artwork; we take it through sampling, bulk production, and export packing.
+              </p>
+              <div class="hero-grid">
+                <div class="hero-feature">
+                  <h3>Not Limited By Category</h3>
+                  <p>A wrestling singlet, a softshell jacket, and a polo shirt all pass through the same cutting tables and the same quality checks.</p>
+                </div>
+                <div class="hero-feature">
+                  <h3>Decorated In-House</h3>
+                  <p>Embroidery, DTG, DTF, sublimation, and dyed fabrics — done on our own machines, not sent out to a print shop.</p>
+                </div>
+                <div class="hero-feature">
+                  <h3>Shipped Under Your Name</h3>
+                  <p>Your tags, your labels, your hangtags. It leaves Sialkot as your product, not ours.</p>
+                </div>
+              </div>
+              <a href="#products" class="btn-primary">Browse Product Lines</a>
             </div>
-            <div class="hero-feature">
-              <h3>Shipped Worldwide</h3>
-              <p>Air and sea freight routed to the EU, UK, US, and APAC, packed to commercial import standard.</p>
-            </div>
-            <div class="hero-feature">
-              <h3>Made Your Way</h3>
-              <p>Your pantones, your labels, your hangtags. It ships under your brand, not ours.</p>
+
+            <div class="hangtag" role="group" aria-label="Sabri Trader product range, factory tag">
+              <div class="hangtag-eyebrow">Factory Tag — What We Make</div>
+              <div class="hangtag-title">Any Sport, Any Category</div>
+
+              <div class="hangtag-sub">Playing Kits</div>
+              <div class="hangtag-chips">
+                <span class="spec-chip">Hockey</span>
+                <span class="spec-chip">Cricket</span>
+                <span class="spec-chip">Rugby</span>
+                <span class="spec-chip">Tennis</span>
+                <span class="spec-chip">Wrestling</span>
+                <span class="spec-chip">Boxing</span>
+                <span class="spec-chip">Polo</span>
+              </div>
+
+              <div class="hangtag-sub">Outerwear &amp; Lifestyle</div>
+              <div class="hangtag-chips">
+                <span class="spec-chip">Puffer Jackets</span>
+                <span class="spec-chip">Softshell Jackets</span>
+                <span class="spec-chip">Gilets</span>
+                <span class="spec-chip">Rain Jackets</span>
+                <span class="spec-chip">Casual / Street / Team Wear</span>
+              </div>
+
+              <div class="hangtag-sub">Decoration Methods</div>
+              <div class="hangtag-chips">
+                <span class="spec-chip">Embroidery</span>
+                <span class="spec-chip">DTG</span>
+                <span class="spec-chip">DTF</span>
+                <span class="spec-chip">Sublimation</span>
+                <span class="spec-chip">Dyed Fabric</span>
+              </div>
+
+              <div class="hangtag-footer">Not On This Tag? Send The Spec Anyway.</div>
             </div>
           </div>
-          <a href="#products" class="btn-primary">Browse Product Lines</a>
         </div>
 
         <div class="capability-band" role="group" aria-label="Factory capabilities at a glance">
           <div class="capability-item">
-            <div class="capability-figure">07</div>
-            <div class="capability-label">Product Lines In Active Production</div>
+            <div class="capability-figure">ANY</div>
+            <div class="capability-label">Sport Or Category — Playing Kits, Outerwear, Casual &amp; Team Wear</div>
           </div>
           <div class="capability-item">
-            <div class="capability-figure">03</div>
-            <div class="capability-label">In-House Decoration Methods —<br>Sublimation, Embroidery, Screen Print</div>
+            <div class="capability-figure">05</div>
+            <div class="capability-label">In-House Decoration Methods —<br>Embroidery, DTG, DTF, Sublimation, Dyed Fabric</div>
           </div>
           <div class="capability-item">
             <div class="capability-figure">01</div>
@@ -1015,12 +1328,12 @@
           </div>
           <div class="capability-item">
             <div class="capability-figure">100%</div>
-            <div class="capability-label">Orders Cut &amp; Sewn To Your Tech Pack, Not A House Block</div>
+            <div class="capability-label">Private-Label Ready — Your Tags, Labels &amp; Branding</div>
           </div>
         </div>
 
-        <p class="text-muted-sm" style="margin-bottom: 60px; max-width: 780px;">
-          Sialkot has been the working center of the world's sports-goods industry for well over a century — the machinists, pattern cutters, and stitching lines here grew up inside this trade. Sabri Trader draws on that base of hands-on skill and puts it directly behind your order, without a trading middleman marking up the invoice or diluting the spec along the way.
+        <p class="text-muted-sm prose" style="margin-bottom: 60px;">
+          Sialkot has been the working center of the world's sports-goods industry for well over a century, and the machinists and pattern cutters here grew up inside that trade. Sabri Trader puts that base of hands-on skill directly behind your order — a hockey squad's home kit one week, a distributor's softshell jacket line the next — without a trading middleman marking up the invoice or diluting the spec along the way.
         </p>
       </section>
 
@@ -1029,8 +1342,10 @@
         <div class="section-header">
           <span class="section-eyebrow">Catalog — Updated From The Factory Floor</span>
           <h2 id="products-title" class="section-title">Product Categories</h2>
-          <p class="section-subtitle">Seven product lines, one factory floor. Pick a category to see current styles, construction, and fabric options. Every line below ships in your sizing, your colorway, and your labeling — nothing here is sold as a stock house brand.</p>
+          <p class="section-subtitle">Playing kits for any sport, plus outerwear, casual, street, and team wear — cut, sewn, and decorated on the same floor. Pick a line below to see current styles, construction, and fabric options. Nothing here is sold as a stock house brand; every line ships in your sizing, your colorway, and your labeling.</p>
         </div>
+
+        <h3 class="group-title first">Playing Kits — By Sport</h3>
         <div class="cards-grid">
           <div class="card-item">
             <div>
@@ -1087,6 +1402,50 @@
               <p class="text-muted-sm">The same construction standards, tailored to a women's fit — built for movement, not resized from the men's block.</p>
             </div>
             <button class="btn-secondary" onclick="event.preventDefault(); openCategory('women-softball-garments')">View Collection</button>
+          </div>
+        </div>
+
+        <h3 class="group-title">Outerwear, Casual &amp; Team Wear</h3>
+        <div class="cards-grid">
+          <div class="card-item">
+            <div>
+              <span class="spec-chip">Channel-Quilted · Insulated</span>
+              <h3>Puffer Jackets</h3>
+              <p class="text-muted-sm">Channel-quilted puffer jackets with recycled or virgin-fill insulation, cut to your outline, colorway, and branding.</p>
+            </div>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('puffer-jackets')">View Collection</button>
+          </div>
+          <div class="card-item">
+            <div>
+              <span class="spec-chip">3-Layer Bonded · Wind-Resistant</span>
+              <h3>Softshell Jackets</h3>
+              <p class="text-muted-sm">Bonded softshell jackets built to cut wind and light rain, with taped seams and a cut that layers cleanly over kit.</p>
+            </div>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('softshell-jackets')">View Collection</button>
+          </div>
+          <div class="card-item">
+            <div>
+              <span class="spec-chip">Sleeveless · Shell Or Insulated</span>
+              <h3>Gilets</h3>
+              <p class="text-muted-sm">Sideline and travel gilets in shell or insulated builds, cut for full arm mobility over a training top or kit.</p>
+            </div>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('gilets')">View Collection</button>
+          </div>
+          <div class="card-item">
+            <div>
+              <span class="spec-chip">Waterproof · Taped Seams</span>
+              <h3>Rain Jackets</h3>
+              <p class="text-muted-sm">Fully waterproof shells with taped seams and adjustable hoods, built for a season of touchline weather.</p>
+            </div>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('rain-jackets')">View Collection</button>
+          </div>
+          <div class="card-item">
+            <div>
+              <span class="spec-chip">Cut &amp; Sew · Any Silhouette</span>
+              <h3>Casual, Street &amp; Team Wear</h3>
+              <p class="text-muted-sm">Hoodies, joggers, tees, and travel wear for club stores, distributor lines, and private-label streetwear drops.</p>
+            </div>
+            <button class="btn-secondary" onclick="event.preventDefault(); openCategory('casual-street-team-wear')">View Collection</button>
           </div>
         </div>
 
@@ -1164,7 +1523,7 @@
               </tbody>
             </table>
           </div>
-          <p class="text-muted-sm mt-lg" style="max-width: 780px;">
+          <p class="text-muted-sm mt-lg prose">
             Knits make up the bulk of what leaves our floor — jerseys, hoodies, and base layers all start here. Cotton-poly blends hold shape and take embroidery cleanly, while the poly-spandex line is what we reach for whenever a garment needs to stretch and recover through a full game rather than just look athletic on a hanger.
           </p>
         </div>
@@ -1203,7 +1562,7 @@
               </tbody>
             </table>
           </div>
-          <p class="text-muted-sm mt-lg" style="max-width: 780px;">
+          <p class="text-muted-sm mt-lg prose">
             Wovens do the structural work — waistbands, shells, and anything that needs to hold a cut rather than stretch with the body. Every roll is checked for weight and colorfastness before it reaches the cutting table, so a reorder six months out still matches the first shipment.
           </p>
         </div>
@@ -1247,7 +1606,7 @@
 
         <div class="panel mt-lg">
           <h3 class="panel-title">Developing A Custom Fabric</h3>
-          <p style="font-size: 0.9rem; color: var(--color-gray-800); line-height: 1.6;">
+          <p>
             None of the above the right match? We source and test custom knit and woven blends against your target weight, stretch, and hand-feel before committing to a bulk fabric run. Send a swatch, a competitor garment, or just a description of how it needs to perform, and our team will come back with composition options and current lead times.
           </p>
         </div>
@@ -1257,15 +1616,26 @@
       <section id="about" class="page-section" aria-labelledby="about-title">
         <div class="section-header">
           <span class="section-eyebrow">Sialkot, Punjab — On The Factory Floor</span>
-          <h2 id="about-title" class="section-title">Factory Infrastructure</h2>
+          <h2 id="about-title" class="section-title">From Sialkot's Factory Floor</h2>
           <p class="section-subtitle">
-            Sialkot, Pakistan is one of the world's major sports-goods manufacturing hubs, and Sabri Trader runs full supply-chain integration here — from pattern to export packaging, under one roof.
+            Sialkot, Pakistan has built the world's sports-goods for well over a century. Sabri Trader runs full supply-chain integration here — playing kits for any sport, outerwear like puffer and softshell jackets, and everyday casual and team wear, all cut, sewn, decorated, and packed under one roof.
           </p>
         </div>
 
-        <p style="font-size: 0.98rem; line-height: 1.7; color: var(--color-gray-800); max-width: 820px; margin-bottom: 40px;">
-          Most overseas buyers dealing with Pakistani sportswear never see a factory at all — they deal with a trading office that quotes a price, then places the actual order with whichever workshop is free that month. Sabri Trader was built the other way around: production stays on our own cutting and stitching lines, so the person who quotes your order is the same operation that's accountable for it landing on time, in spec, and in the sizing you approved.
-        </p>
+        <div class="split-intro">
+          <div class="intro-copy">
+            <p>
+              Most overseas buyers dealing with Pakistani sportswear never see a factory at all — they deal with a trading office that quotes a price, then places the actual order with whichever workshop is free that month. Sabri Trader was built the other way around: production stays on our own cutting and stitching lines, so the person who quotes your order is the same operation accountable for it landing on time, in spec, and in the sizing you approved.
+            </p>
+            <p>
+              That setup is also why the product list here isn't fenced off to one sport or one garment type: the same pattern-making and stitching discipline that holds up on a hockey kit carries over to a rain jacket or a private-label streetwear run, so a club or distributor with programs across several categories can consolidate all of it onto one production line instead of juggling several suppliers.
+            </p>
+          </div>
+          <div class="founder-quote">
+            <p>&ldquo;I wanted overseas clubs and distributors dealing with us to be talking to the same floor that cuts their kits — not a trading office relaying messages back and forth.&rdquo;</p>
+            <cite>&mdash; Rana Faheem, CEO, Sabri Trader</cite>
+          </div>
+        </div>
 
         <div class="info-grid">
           <div class="info-card">
@@ -1274,7 +1644,7 @@
           </div>
           <div class="info-card">
             <h4>In-House Customization</h4>
-            <p>Dye sublimation, multi-head embroidery, and screen printing, all handled on site — no subcontracting your artwork out.</p>
+            <p>Embroidery, DTG, DTF, sublimation, and dyed fabrics — all handled on site, across every sport and product line we cut for.</p>
           </div>
           <div class="info-card">
             <h4>Export Compliance</h4>
@@ -1287,7 +1657,7 @@
         </div>
 
         <div class="section-header mt-lg">
-          <h3 class="section-title" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">How We Hold Quality</h3>
+          <h3 class="section-title section-title-sm">How We Hold Quality</h3>
           <p class="section-subtitle">Four checkpoints, every order, before anything reaches export packing.</p>
         </div>
         <div class="info-grid">
@@ -1315,7 +1685,7 @@
 
         <div class="panel mt-lg">
           <h3 class="panel-title">Executive Leadership</h3>
-          <p style="font-size: 0.95rem;"><strong>Rana Faheem — CEO:</strong> Oversees global business development, client relations, and factory operational compliance to guarantee seamless export execution.</p>
+          <p><strong>Rana Faheem — CEO:</strong> Leads international business development and client relationships, and signs off on production and export compliance for every order before it ships.</p>
         </div>
       </section>
 
@@ -1323,8 +1693,24 @@
       <section id="partnership" class="page-section" aria-labelledby="partnership-title">
         <div class="section-header">
           <span class="section-eyebrow">Working Directly With Our Floor</span>
-          <h2 id="partnership-title" class="section-title">B2B Manufacturing Program</h2>
-          <p class="section-subtitle">Partner directly with our manufacturing floor for OEM, private-label, and bulk distributor accounts. No trading agent in between — you deal with the people cutting and sewing the order.</p>
+          <h2 id="partnership-title" class="section-title">Partner With The Factory Floor</h2>
+          <p class="section-subtitle">Partner directly with our manufacturing floor for OEM, private-label, and bulk distributor accounts — playing kits for any sport, outerwear, or everyday team wear. No trading agent in between; you deal with the people cutting and sewing the order.</p>
+        </div>
+
+        <div class="split-intro">
+          <div class="intro-copy">
+            <p>
+              A partnership here starts with your tech pack, not our catalog. Whether it's a hockey club replacing a home kit, a distributor building a private-label street wear line, or a boxing federation ordering fight apparel, the process runs through the same three stages below — design review, a physical sample you approve before we cut fabric, and a bulk run you can track against a firm date.
+            </p>
+          </div>
+          <div class="fact-panel">
+            <h4>Program At A Glance</h4>
+            <ul>
+              <li><strong>Bespoke &amp; Private Label</strong>Your tags, labels, hangtags, and packaging — nothing ships under our name unless asked.</li>
+              <li><strong>Decoration Methods</strong>Embroidery, DTG, DTF, sublimation, and dyed fabrics, all in-house.</li>
+              <li><strong>Ships To</strong>EU, UK, US, and APAC by air or sea freight, export-documented.</li>
+            </ul>
+          </div>
         </div>
 
         <div class="info-grid">
@@ -1351,7 +1737,7 @@
         </div>
 
         <div class="section-header">
-          <h3 class="section-title" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">Common Questions</h3>
+          <h3 class="section-title section-title-sm">Common Questions</h3>
         </div>
         <div class="faq-list">
           <details class="faq-item">
@@ -1359,12 +1745,16 @@
             <p class="faq-answer">MOQ depends on the garment type, fabric, and how much customization is involved — a simple single-color tee runs differently than a fully sublimated, multi-panel jersey. Send your spec through the contact form and we'll quote a minimum against that exact order, not a generic factory floor.</p>
           </details>
           <details class="faq-item">
+            <summary>Can you handle more than one sport in a single order?</summary>
+            <p class="faq-answer">Yes. If your club or distributor account runs programs across several sports, or mixes playing kits with outerwear and casual lines, we can consolidate all of it into one production and shipping schedule instead of running separate suppliers for each category.</p>
+          </details>
+          <details class="faq-item">
             <summary>How long does sampling and production take?</summary>
             <p class="faq-answer">Pre-production samples typically ship within days of a confirmed tech pack and fabric selection; bulk production timelines depend on order volume and current factory load. We'll give you a firm date range once your spec and quantity are confirmed, and hold to it.</p>
           </details>
           <details class="faq-item">
-            <summary>Do you offer private labeling?</summary>
-            <p class="faq-answer">Yes. Your woven labels, care labels, hangtags, and packaging go on the garment — nothing ships under the Sabri Trader name unless you ask for it to.</p>
+            <summary>Do you offer private labeling and bespoke cuts?</summary>
+            <p class="faq-answer">Yes. Your woven labels, care labels, hangtags, and packaging go on the garment, and we'll adjust the pattern block to a bespoke fit rather than resizing a stock template — nothing ships under the Sabri Trader name unless you ask for it to.</p>
           </details>
           <details class="faq-item">
             <summary>What are your payment terms?</summary>
@@ -1386,7 +1776,7 @@
           <p class="section-subtitle">Submit your order details or RFQ below. Our sales engineering team responds within 24 hours.</p>
         </div>
 
-        <div class="panel mt-lg" style="max-width: 800px;">
+        <div class="panel mt-lg prose">
           <h3 class="panel-title">Get A Faster, More Accurate Quote</h3>
           <p class="text-muted-sm">The more of this you can include up front, the fewer back-and-forth emails it takes to get you a real number: product category and rough quantity, target fabric or performance need, whether you need private labeling, and your target ship-by date. No tech pack yet? Send what you have — sketches, a reference garment, or just a description — and we'll help shape the spec from there.</p>
         </div>
@@ -1477,7 +1867,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-col">
-          <h4>Product Lines</h4>
+          <h4>Playing Kits</h4>
           <ul>
             <li><a href="#products" onclick="event.preventDefault(); openCategory('american-foot-ball-uniform')">American Football</a></li>
             <li><a href="#products" onclick="event.preventDefault(); openCategory('baseball-garments')">Baseball Garments</a></li>
@@ -1486,6 +1876,16 @@
             <li><a href="#products" onclick="event.preventDefault(); openCategory('our-force-garments')">Tactical / Our Force</a></li>
             <li><a href="#products" onclick="event.preventDefault(); openCategory('soft-ball-garments')">Softball Line</a></li>
             <li><a href="#products" onclick="event.preventDefault(); openCategory('women-softball-garments')">Women's Softball</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Outerwear &amp; Team Wear</h4>
+          <ul>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('puffer-jackets')">Puffer Jackets</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('softshell-jackets')">Softshell Jackets</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('gilets')">Gilets</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('rain-jackets')">Rain Jackets</a></li>
+            <li><a href="#products" onclick="event.preventDefault(); openCategory('casual-street-team-wear')">Casual, Street &amp; Team Wear</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1520,6 +1920,12 @@
         <span>Factory-direct OEM manufacturing, Sialkot, Pakistan.</span>
       </div>
     </footer>
+
+    <!-- MOBILE THUMB-ZONE CTA BAR -->
+    <div class="mobile-cta-bar" role="group" aria-label="Quick contact actions">
+      <a href="https://wa.me/923301074868" target="_blank" rel="noopener" class="primary">WhatsApp Us</a>
+      <a href="#contact" class="secondary">Get A Quote</a>
+    </div>
 
     <!-- JAVASCRIPT -->
     <script>
